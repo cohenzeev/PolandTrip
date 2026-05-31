@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🇵🇱 Poland Family Adventure | July 14–25, 2026</title>
+  <title>🇵🇱 12-Day Family Road Trip · Southern Poland · 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; font-size: 16px; }
-    body { font-family: 'Inter', sans-serif; background: #f4f1ec; color: #1a1a2e; line-height: 1.6; }
+    body { font-family: 'DM Sans', sans-serif; background: #f4f1ec; color: #1a1a2e; line-height: 1.6; }
     a { text-decoration: none; color: inherit; }
     img { max-width: 100%; display: block; }
 
@@ -22,12 +22,14 @@
       --white:   #ffffff;
       --gray:    #6b7280;
       --light:   #f3f4f6;
+      --green:   #166534;
       --shadow:  0 4px 24px rgba(0,0,0,0.10);
       --shadow2: 0 10px 40px rgba(0,0,0,0.18);
       --r:       16px;
       --t:       all 0.3s ease;
     }
 
+    /* ─── NAV ─── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
       display: flex; align-items: center; justify-content: space-between;
@@ -38,17 +40,21 @@
     }
     .nav-logo {
       font-family: 'Playfair Display', serif;
-      font-size: 1.25rem; font-weight: 700;
+      font-size: 1.2rem; font-weight: 700;
       color: var(--gold); letter-spacing: 0.5px;
+      display: flex; align-items: center; gap: 0.5rem;
     }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links { display: flex; gap: 1.8rem; list-style: none; }
     .nav-links a {
-      color: rgba(255,255,255,0.8); font-size: 0.88rem; font-weight: 500;
-      letter-spacing: 0.5px; transition: var(--t);
+      color: rgba(255,255,255,0.8); font-size: 0.86rem; font-weight: 500;
+      letter-spacing: 0.4px; transition: var(--t);
       padding-bottom: 2px; border-bottom: 1.5px solid transparent;
     }
     .nav-links a:hover { color: var(--gold); border-color: var(--gold); }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--gold); margin: 5px 0; transition: var(--t); }
 
+    /* ─── HERO ─── */
     #hero {
       height: 100vh; min-height: 680px;
       position: relative; display: flex; align-items: center; justify-content: center;
@@ -62,34 +68,34 @@
     #hero:hover .hero-bg { transform: scale(1.0); }
     .hero-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(160deg, rgba(13,27,42,0.55) 0%, rgba(13,27,42,0.75) 60%, rgba(13,27,42,0.97) 100%);
+      background: linear-gradient(160deg, rgba(13,27,42,0.50) 0%, rgba(13,27,42,0.70) 55%, rgba(13,27,42,0.96) 100%);
     }
     .hero-content {
       position: relative; z-index: 2; text-align: center;
-      color: #fff; padding: 0 1.5rem; max-width: 820px;
+      color: #fff; padding: 0 1.5rem; max-width: 860px;
     }
     .hero-eyebrow {
-      font-size: 0.78rem; font-weight: 700; letter-spacing: 4px;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 4px;
       text-transform: uppercase; color: var(--gold);
       margin-bottom: 1.2rem; display: block;
     }
     .hero-title {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2.8rem, 6.5vw, 5.2rem);
+      font-size: clamp(2.6rem, 6vw, 5rem);
       font-weight: 900; line-height: 1.08;
       margin-bottom: 1.4rem;
       text-shadow: 0 2px 20px rgba(0,0,0,0.4);
     }
     .hero-sub {
       font-size: 1.1rem; font-weight: 300;
-      color: rgba(255,255,255,0.85); max-width: 540px;
+      color: rgba(255,255,255,0.85); max-width: 560px;
       margin: 0 auto 2.2rem; line-height: 1.75;
     }
-    .hero-chips { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+    .hero-chips { display: flex; gap: 0.7rem; justify-content: center; flex-wrap: wrap; }
     .chip {
       background: rgba(201,168,76,0.18); border: 1px solid rgba(201,168,76,0.5);
-      color: var(--gold2); padding: 0.45rem 1.1rem; border-radius: 50px;
-      font-size: 0.82rem; font-weight: 600; letter-spacing: 0.4px;
+      color: var(--gold2); padding: 0.4rem 1rem; border-radius: 50px;
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.3px;
       backdrop-filter: blur(6px);
     }
     .hero-scroll {
@@ -106,26 +112,28 @@
       50%       { transform: translateX(-50%) translateY(9px); opacity: 1; }
     }
 
+    /* ─── STATS ─── */
     #stats { background: var(--navy); padding: 2.2rem 0; }
     .stats-row {
       display: flex; justify-content: center; flex-wrap: wrap;
       gap: 0; max-width: 1100px; margin: 0 auto; padding: 0 2rem;
     }
     .stat {
-      flex: 1; min-width: 130px; text-align: center;
+      flex: 1; min-width: 120px; text-align: center;
       padding: 0.75rem 1rem;
       border-right: 1px solid rgba(255,255,255,0.08);
     }
     .stat:last-child { border-right: none; }
     .stat-n {
       font-family: 'Playfair Display', serif;
-      font-size: 2.4rem; font-weight: 900; color: var(--gold); line-height: 1;
+      font-size: 2.2rem; font-weight: 900; color: var(--gold); line-height: 1;
     }
     .stat-l {
-      font-size: 0.72rem; font-weight: 600; letter-spacing: 2px;
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 2px;
       text-transform: uppercase; color: rgba(255,255,255,0.5); margin-top: 4px;
     }
 
+    /* ─── SHARED SECTION ─── */
     section { padding: 5rem 0; }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
     .sec-head { text-align: center; margin-bottom: 3.5rem; }
@@ -141,6 +149,7 @@
     }
     .sec-desc { font-size: 1rem; color: var(--gray); max-width: 580px; margin: 0 auto; line-height: 1.75; }
 
+    /* ─── ROUTE ─── */
     #route { background: var(--cream); }
     .route-flow {
       display: flex; align-items: center; justify-content: center;
@@ -148,16 +157,17 @@
     }
     .route-node {
       background: var(--navy); color: #fff;
-      padding: 1.5rem 1.8rem; border-radius: var(--r);
-      text-align: center; min-width: 160px;
+      padding: 1.4rem 1.6rem; border-radius: var(--r);
+      text-align: center; min-width: 150px;
       box-shadow: var(--shadow);
     }
     .route-node.highlight { background: #162c46; border: 2px solid var(--gold); }
     .route-icon { font-size: 1.8rem; margin-bottom: 0.4rem; }
-    .route-name { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; }
-    .route-dates { font-size: 0.75rem; color: var(--gold); font-weight: 600; margin-top: 3px; }
-    .route-arrow { font-size: 1.4rem; color: var(--gold); padding: 0 0.8rem; flex-shrink: 0; }
+    .route-name { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; }
+    .route-dates { font-size: 0.72rem; color: var(--gold); font-weight: 600; margin-top: 3px; }
+    .route-arrow { font-size: 1.4rem; color: var(--gold); padding: 0 0.7rem; flex-shrink: 0; }
 
+    /* ─── ITINERARY ─── */
     #itinerary { background: #fff; }
     .base-block { margin-bottom: 4rem; }
     .base-banner {
@@ -175,13 +185,13 @@
       padding: 0.45rem 1.15rem; border-radius: 50px;
       font-size: 0.82rem; font-weight: 800; white-space: nowrap; flex-shrink: 0;
     }
-
     .days-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
       gap: 1.5rem;
     }
 
+    /* ─── Day Card ─── */
     .dc {
       background: #fff; border-radius: var(--r);
       box-shadow: var(--shadow); overflow: hidden;
@@ -192,12 +202,13 @@
     .dc.visible { opacity: 1; transform: translateY(0); }
     .dc:hover { transform: translateY(-7px); box-shadow: var(--shadow2); }
     .dc-img {
-      width: 100%; height: 195px; object-fit: cover; display: block;
+      width: 100%; height: 200px; object-fit: cover; display: block;
       background: linear-gradient(135deg, var(--navy2), var(--navy));
     }
     .dc-body { padding: 1.4rem; }
-    .dc-day  { font-size: 0.72rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 0.35rem; }
-    .dc-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; color: var(--navy); margin-bottom: 1rem; line-height: 1.3; }
+    .dc-day  { font-size: 0.7rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 0.35rem; }
+    .dc-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; line-height: 1.3; }
+    .dc-drive { font-size: 0.78rem; color: var(--gray); margin-bottom: 0.9rem; display: flex; align-items: center; gap: 0.4rem; }
     .dc-list { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
     .dc-list li { font-size: 0.88rem; color: #374151; line-height: 1.55; display: flex; gap: 0.5rem; align-items: flex-start; }
     .dc-list li .ico { flex-shrink: 0; margin-top: 1px; }
@@ -212,8 +223,33 @@
       font-size: 0.66rem; font-weight: 800; padding: 1px 7px; border-radius: 4px;
       margin-left: 5px; vertical-align: middle; letter-spacing: 0.5px;
     }
+    .best-day-tag {
+      display: inline-block; background: #dcfce7; color: #166534;
+      font-size: 0.66rem; font-weight: 800; padding: 1px 7px; border-radius: 4px;
+      margin-left: 5px; vertical-align: middle;
+    }
+    .dc-waze {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: #f0f9ff; border: 1px solid #bae6fd;
+      color: #0369a1; font-size: 0.76rem; font-weight: 600;
+      padding: 4px 10px; border-radius: 6px; margin-top: 0.7rem;
+      transition: var(--t);
+    }
+    .dc-waze:hover { background: #e0f2fe; }
 
-    #hotels { background: var(--cream); }
+    /* ─── DRIVING TABLE ─── */
+    #driving { background: var(--cream); }
+    .drive-table { width: 100%; border-collapse: collapse; border-radius: var(--r); overflow: hidden; box-shadow: var(--shadow); }
+    .drive-table thead { background: var(--navy); color: #fff; }
+    .drive-table th { padding: 1rem 1.25rem; font-size: 0.82rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; text-align: left; }
+    .drive-table td { padding: 0.9rem 1.25rem; font-size: 0.88rem; color: #374151; border-bottom: 1px solid #e5e7eb; }
+    .drive-table tr:last-child td { border-bottom: none; }
+    .drive-table tr:nth-child(even) td { background: #f9fafb; }
+    .drive-table tr:hover td { background: #fef9ed; }
+    .drive-time { font-weight: 700; color: var(--navy); }
+
+    /* ─── HOTELS ─── */
+    #hotels { background: #fff; }
     .hotel-group { margin-bottom: 3.5rem; }
     .hotel-group-title {
       font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700;
@@ -225,7 +261,7 @@
       gap: 1.5rem;
     }
     .hc {
-      background: #fff; border-radius: var(--r); box-shadow: var(--shadow);
+      background: var(--cream); border-radius: var(--r); box-shadow: var(--shadow);
       overflow: hidden; position: relative; transition: var(--t);
       opacity: 0; transform: translateY(20px);
     }
@@ -241,14 +277,8 @@
     .hc-body { padding: 1.2rem; }
     .hc-stars { color: #f59e0b; font-size: 0.82rem; margin-bottom: 0.35rem; }
     .hc-name { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 0.4rem; }
-    .hc-price { font-size: 0.9rem; color: #374151; margin-bottom: 0.2rem; }
-    .hc-price strong { font-size: 1.05rem; color: var(--navy); }
-    .hc-total { font-size: 0.75rem; color: var(--gray); margin-bottom: 0.9rem; }
     .hc-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1rem; }
-    .htag {
-      background: #f3f4f6; color: #374151;
-      font-size: 0.7rem; font-weight: 600; padding: 2px 8px; border-radius: 4px;
-    }
+    .htag { background: #f3f4f6; color: #374151; font-size: 0.7rem; font-weight: 600; padding: 2px 8px; border-radius: 4px; }
     .btn-book {
       display: flex; align-items: center; justify-content: center; gap: 0.4rem;
       background: #003580; color: #fff;
@@ -256,16 +286,18 @@
       font-size: 0.83rem; font-weight: 700; transition: var(--t);
     }
     .btn-book:hover { background: #0050a0; }
+
     .tip-box {
       background: #fffbeb; border: 1.5px solid #fbbf24;
       border-radius: var(--r); padding: 1.4rem 1.75rem;
-      display: flex; gap: 1rem; align-items: flex-start;
+      display: flex; gap: 1rem; align-items: flex-start; margin-top: 2rem;
     }
     .tip-box-icon { font-size: 1.6rem; flex-shrink: 0; }
     .tip-box strong { color: #92400e; font-size: 0.95rem; display: block; margin-bottom: 0.35rem; }
     .tip-box p { color: #78350f; font-size: 0.88rem; line-height: 1.65; }
     .tip-box a { color: #92400e; font-weight: 700; border-bottom: 1px solid #fbbf24; }
 
+    /* ─── FLIGHTS ─── */
     #flights { background: var(--navy); }
     #flights .sec-title { color: #fff; }
     #flights .sec-desc  { color: rgba(255,255,255,0.65); }
@@ -303,13 +335,14 @@
     }
     .btn-gf:hover { background: var(--gold2); transform: scale(1.03); }
 
-    #tips { background: #fff; }
+    /* ─── TIPS ─── */
+    #tips { background: var(--cream); }
     .tips-grid {
       display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: 1.4rem;
     }
     .tc {
-      background: var(--cream); border-radius: var(--r);
+      background: #fff; border-radius: var(--r);
       padding: 1.65rem; border-left: 4px solid var(--gold);
       transition: var(--t);
     }
@@ -319,489 +352,643 @@
     .tc-text  { font-size: 0.87rem; color: #4b5563; line-height: 1.68; }
     .tc-text a { color: var(--navy); font-weight: 600; border-bottom: 1px solid rgba(201,168,76,0.6); }
 
-    #gallery { background: var(--cream); }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1rem;
-    }
-    .gc {
-      border-radius: 12px; overflow: hidden; position: relative;
-      aspect-ratio: 4/3; cursor: pointer; transition: var(--t);
-    }
-    .gc:hover { transform: scale(1.03); box-shadow: var(--shadow2); z-index: 2; }
-    .gc img {
-      width: 100%; height: 100%; object-fit: cover; display: block;
-      background: linear-gradient(135deg, var(--navy2), var(--navy));
-      transition: transform 0.4s ease;
-    }
-    .gc:hover img { transform: scale(1.07); }
-    .gc-label {
-      position: absolute; bottom: 0; left: 0; right: 0;
-      background: linear-gradient(transparent, rgba(13,27,42,0.82));
-      color: #fff; padding: 1rem 0.9rem 0.7rem;
-      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.3px;
-      opacity: 0; transition: var(--t);
-    }
-    .gc:hover .gc-label { opacity: 1; }
+    /* ─── PACKING ─── */
+    #packing { background: #fff; }
+    .packing-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap: 1.4rem; }
+    .pack-card { background: var(--cream); border-radius: var(--r); padding: 1.5rem; border-top: 4px solid var(--gold); }
+    .pack-title { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.9rem; display: flex; align-items: center; gap: 0.5rem; }
+    .pack-list { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+    .pack-list li { font-size: 0.85rem; color: #374151; display: flex; gap: 0.5rem; align-items: flex-start; }
+    .pack-list li::before { content: '✓'; color: var(--gold); font-weight: 800; flex-shrink: 0; margin-top: 1px; }
 
+    /* ─── FOOTER ─── */
     footer {
-      background: var(--navy); color: rgba(255,255,255,0.5);
-      text-align: center; padding: 2.5rem 2rem; font-size: 0.83rem;
+      background: var(--navy); color: rgba(255,255,255,0.7);
+      padding: 3.5rem 0 2rem; text-align: center;
     }
-    footer strong { color: var(--gold); }
-    .footer-flag { font-size: 2rem; margin-bottom: 0.6rem; }
-    .footer-title { font-family: 'Playfair Display', serif; color: rgba(255,255,255,0.85); font-size: 1.1rem; font-weight: 700; margin-bottom: 0.4rem; }
-    .footer-note { margin-top: 1rem; font-size: 0.72rem; opacity: 0.4; }
+    .footer-flag { font-size: 3rem; margin-bottom: 1rem; }
+    .footer-title {
+      font-family: 'Playfair Display', serif; font-size: 1.5rem;
+      font-weight: 700; color: var(--gold); margin-bottom: 0.5rem;
+    }
+    footer p { font-size: 0.88rem; line-height: 1.7; }
+    .footer-note { font-size: 0.76rem; color: rgba(255,255,255,0.35); margin-top: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
 
-    ::-webkit-scrollbar { width: 7px; }
-    ::-webkit-scrollbar-track { background: var(--navy); }
-    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
-
+    /* ─── RESPONSIVE ─── */
     @media (max-width: 768px) {
-      nav { padding: 0.8rem 1.2rem; }
-      .nav-links { display: none; }
-      .days-grid, .hotels-grid, .flights-grid, .tips-grid, .gallery-grid { grid-template-columns: 1fr; }
-      .route-flow { flex-direction: column; }
-      .route-arrow { transform: rotate(90deg); }
+      nav { padding: 0.8rem 1.25rem; }
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(13,27,42,0.98); padding: 1.5rem; gap: 1.2rem; }
+      .nav-links.open { display: flex; }
+      .hamburger { display: block; }
+      .route-flow { gap: 0.5rem; }
+      .route-arrow { padding: 0 0.3rem; font-size: 1rem; }
       .base-banner { flex-wrap: wrap; }
-      .stats-row { gap: 0; }
-      .stat { min-width: 90px; }
+      .base-pill { margin-top: 0.5rem; }
+      .drive-table { display: block; overflow-x: auto; }
+      section { padding: 3.5rem 0; }
     }
   </style>
 </head>
 <body>
 
+<!-- ─── NAV ─── -->
 <nav id="nav">
   <div class="nav-logo">🇵🇱 Poland 2026</div>
-  <ul class="nav-links">
-    <li><a href="#route">Overview</a></li>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#route">Route</a></li>
     <li><a href="#itinerary">Itinerary</a></li>
+    <li><a href="#driving">Driving</a></li>
     <li><a href="#hotels">Hotels</a></li>
     <li><a href="#flights">Flights</a></li>
     <li><a href="#tips">Tips</a></li>
+    <li><a href="#packing">Packing</a></li>
   </ul>
+  <button class="hamburger" id="burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
+<!-- ─── HERO ─── -->
 <section id="hero">
   <img class="hero-bg"
-    src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1920&q=85"
-    alt="Tatra Mountains — Poland"
-    onerror="this.style.display='none'" />
+    src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=80"
+    alt="Tatra Mountains Poland"
+    onerror="this.src='https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1800&q=80'" />
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <span class="hero-eyebrow">Family Adventure · 2 Families · Kids ages 7 &amp; 11</span>
-    <h1 class="hero-title">Poland<br>Star Route from Kraków</h1>
-    <p class="hero-sub">11 days of medieval castles, alpine lakes, underground wonders and Tatra adventures — with a base so central you'll never drive more than 1.5 hours.</p>
+    <span class="hero-eyebrow">✈️ July 14–25, 2026 · Two Families · 4 Kids</span>
+    <h1 class="hero-title">12-Day Family<br>Road Trip in<br>Southern Poland</h1>
+    <p class="hero-sub">Krakow · Zakopane · Szczyrk — Mountains, alpine coasters, thermal pools & unforgettable adventures for the whole family</p>
     <div class="hero-chips">
-      <span class="chip">📅 July 14–25, 2026</span>
-      <span class="chip">🏰 Castles &amp; Caves</span>
       <span class="chip">🏔️ Tatra Mountains</span>
-      <span class="chip">🚗 Two Rental Cars</span>
+      <span class="chip">🎿 Alpine Coasters</span>
+      <span class="chip">🌊 Thermal Pools</span>
+      <span class="chip">🧗 Rope Parks</span>
+      <span class="chip">🥾 Family Hikes</span>
+      <span class="chip">⛏️ Salt Mine</span>
     </div>
   </div>
   <div class="hero-scroll">
-    Scroll
     <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <polyline points="6 9 12 15 18 9"></polyline>
     </svg>
+    scroll
   </div>
 </section>
 
+<!-- ─── STATS ─── -->
 <section id="stats">
   <div class="stats-row">
-    <div class="stat"><div class="stat-n">11</div><div class="stat-l">Days</div></div>
-    <div class="stat"><div class="stat-n">2</div><div class="stat-l">Families</div></div>
+    <div class="stat"><div class="stat-n">12</div><div class="stat-l">Days</div></div>
+    <div class="stat"><div class="stat-n">4</div><div class="stat-l">Kids 7–11</div></div>
     <div class="stat"><div class="stat-n">3</div><div class="stat-l">Bases</div></div>
-    <div class="stat"><div class="stat-n">12+</div><div class="stat-l">Attractions</div></div>
-    <div class="stat"><div class="stat-n">1.5h</div><div class="stat-l">Max Drive</div></div>
+    <div class="stat"><div class="stat-n">2</div><div class="stat-l">Alpine Coasters</div></div>
+    <div class="stat"><div class="stat-n">1</div><div class="stat-l">Water Park Day</div></div>
     <div class="stat"><div class="stat-n">~4h</div><div class="stat-l">TLV → KRK</div></div>
   </div>
 </section>
 
+<!-- ─── ROUTE ─── -->
 <section id="route">
   <div class="container">
     <div class="sec-head">
-      <span class="sec-tag">⭐ Star Route</span>
-      <h2 class="sec-title">The Journey at a Glance</h2>
-      <p class="sec-desc">Two comfortable bases give total flexibility — castles, mountains and adventure all within easy reach.</p>
+      <span class="sec-tag">🗺️ The Journey</span>
+      <h2 class="sec-title">Route at a Glance</h2>
+      <p class="sec-desc">Three comfortable bases covering the best of Southern Poland — Krakow, Zakopane & Szczyrk.</p>
     </div>
     <div class="route-flow">
       <div class="route-node">
         <div class="route-icon">✈️</div>
-        <div class="route-name">Tel Aviv (TLV)</div>
+        <div class="route-name">Tel Aviv</div>
         <div class="route-dates">Jul 14 · Depart</div>
       </div>
       <div class="route-arrow">→</div>
       <div class="route-node highlight">
         <div class="route-icon">🏰</div>
         <div class="route-name">Kraków</div>
-        <div class="route-dates">Days 1–4 · 3 nights</div>
+        <div class="route-dates">Days 1–3 · 3 nights</div>
       </div>
       <div class="route-arrow">→</div>
       <div class="route-node highlight">
         <div class="route-icon">🏔️</div>
         <div class="route-name">Zakopane</div>
-        <div class="route-dates">Days 5–9 · 4 nights</div>
+        <div class="route-dates">Days 4–8 · 5 nights</div>
       </div>
       <div class="route-arrow">→</div>
       <div class="route-node highlight">
-        <div class="route-icon">🏙️</div>
-        <div class="route-name">Kraków</div>
-        <div class="route-dates">Days 10–11 · 2 nights</div>
+        <div class="route-icon">⛰️</div>
+        <div class="route-name">Szczyrk</div>
+        <div class="route-dates">Days 9–11 · 3 nights</div>
       </div>
       <div class="route-arrow">→</div>
       <div class="route-node">
         <div class="route-icon">✈️</div>
-        <div class="route-name">Tel Aviv (TLV)</div>
+        <div class="route-name">Tel Aviv</div>
         <div class="route-dates">Jul 25 · Return</div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ─── ITINERARY ─── -->
 <section id="itinerary">
   <div class="container">
     <div class="sec-head">
       <span class="sec-tag">📅 Day by Day</span>
-      <h2 class="sec-title">Full 11-Day Itinerary</h2>
+      <h2 class="sec-title">Full 12-Day Itinerary</h2>
       <p class="sec-desc">Every link goes to the official website or ticket page. Click to plan and book!</p>
     </div>
 
+    <!-- ══ BASE 1: KRAKÓW ══ -->
     <div class="base-block">
       <div class="base-banner">
         <div class="base-icon">🏰</div>
         <div class="base-text">
           <div class="base-name">Base 1 — Kraków</div>
-          <div class="base-sub">Royal capital · medieval old town · salt mines · castles &amp; Eagle's Nests · July 14–17</div>
+          <div class="base-sub">Royal capital · Old Town · Salt Mine · National Park · July 14–16</div>
         </div>
         <div class="base-pill">3 Nights</div>
       </div>
       <div class="days-grid">
 
+        <!-- Day 1 -->
         <div class="dc">
-          <img class="dc-img" src="https://images.unsplash.com/photo-1609619385002-f40f1df9b7eb?auto=format&fit=crop&w=800&q=80" alt="Kraków Main Market Square" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80'" />
+          <img class="dc-img"
+            src="https://images.unsplash.com/photo-1588516903720-8ceb67f9ef84?auto=format&fit=crop&w=800&q=80"
+            alt="Krakow Old Town Market Square"
+            onerror="this.src='https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=80'" />
           <div class="dc-body">
             <div class="dc-day">Day 1 · July 14</div>
             <div class="dc-title">Arrival + Historic Kraków</div>
             <ul class="dc-list">
-              <li><span class="ico">✈️</span>Land at <a href="https://krakowairport.pl/en/" target="_blank" rel="noopener">KRK Airport</a> — collect 2 rental cars (Hertz / Avis / Sixt)</li>
-              <li><span class="ico">🏛️</span><a href="https://www.krakow.pl/english/" target="_blank" rel="noopener">Rynek Główny</a> — UNESCO Main Market Square; first dinner &amp; evening atmosphere</li>
-              <li><span class="ico">🏰</span><a href="https://wawel.krakow.pl/en" target="_blank" rel="noopener">Wawel Castle</a> — Poland's royal castle on a limestone hill, sweeping city views</li>
-              <li><span class="ico">🐉</span><a href="https://wawel.krakow.pl/en/main-attractions/dragon-s-den" target="_blank" rel="noopener">Dragon's Den (Smocza Jama)</a> — fire-breathing dragon statue, activates every few minutes <span class="star-tag">⭐ Kids' Pick</span></li>
+              <li><span class="ico">✈️</span>Land at <a href="https://krakowairport.pl/en/" target="_blank" rel="noopener">KRK Airport</a> — pickup 2 rental cars</li>
+              <li><span class="ico">🏛️</span><a href="https://www.krakow.pl/english/" target="_blank" rel="noopener">Rynek Główny (Main Market Square)</a> — UNESCO listed, evening stroll & dinner</li>
+              <li><span class="ico">🏰</span><a href="https://wawel.krakow.pl/en" target="_blank" rel="noopener">Wawel Castle & Cathedral</a> — Poland's royal hilltop castle with city views</li>
             </ul>
           </div>
         </div>
 
+        <!-- Day 2 -->
         <div class="dc">
-          <img class="dc-img" src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80" alt="Wieliczka Salt Mine" onerror="this.src='https://images.unsplash.com/photo-1518013146-72479768bada?auto=format&fit=crop&w=800&q=80'" />
+          <img class="dc-img"
+            src="https://images.unsplash.com/photo-1541427468627-a89a96e5ca1d?auto=format&fit=crop&w=800&q=80"
+            alt="Wieliczka Salt Mine underground chambers"
+            onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80'" />
           <div class="dc-body">
             <div class="dc-day">Day 2 · July 15</div>
-            <div class="dc-title">Wieliczka Salt Mine + Kazimierz</div>
+            <div class="dc-title">Wieliczka Salt Mine</div>
+            <div class="dc-drive">🚗 20 min from Kraków</div>
             <ul class="dc-list">
-              <li><span class="ico">⛏️</span><a href="https://www.wieliczka-saltmine.com/" target="_blank" rel="noopener">Wieliczka Salt Mine</a> — UNESCO World Heritage; tunnels, chambers &amp; stunning salt sculptures <span class="star-tag">⭐ Must-See</span></li>
-              <li><span class="ico">🎟️</span><a href="https://bilet.wieliczka-saltmine.com/" target="_blank" rel="noopener">Book tickets online in advance</a> — they sell out fast in July!</li>
-              <li><span class="ico">🕍</span>Afternoon: <a href="https://www.krakow.pl/english/7405,main.html" target="_blank" rel="noopener">Kazimierz (Jewish Quarter)</a> — historic streets, art cafés &amp; Plac Nowy market</li>
+              <li><span class="ico">⛏️</span><a href="https://www.wieliczka-saltmine.com/" target="_blank" rel="noopener">Wieliczka Salt Mine</a> — UNESCO World Heritage; tunnels, chambers & the stunning St. Kinga Chapel <span class="star-tag">⭐ Must-See</span></li>
+              <li><span class="ico">🎟️</span><a href="https://bilet.wieliczka-saltmine.com/" target="_blank" rel="noopener">Book Tourist Route tickets online</a> — sell out fast in July!</li>
+              <li><span class="ico">🌳</span>Afternoon: Kraków parks & Old Town wandering</li>
             </ul>
+            <a class="dc-waze" href="https://waze.com/ul?q=Wieliczka+Salt+Mine" target="_blank" rel="noopener">🔵 Waze: Wieliczka Salt Mine</a>
           </div>
         </div>
 
+        <!-- Day 3 -->
         <div class="dc">
-          <img class="dc-img" src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=80" alt="Ojców National Park" onerror="this.src='https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80'" />
+          <img class="dc-img"
+            src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=80"
+            alt="Ojców National Park limestone cliffs"
+            onerror="this.src='https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80'" />
           <div class="dc-body">
             <div class="dc-day">Day 3 · July 16</div>
-            <div class="dc-title">Ojców National Park + Castle Trail</div>
+            <div class="dc-title">Ojców National Park</div>
+            <div class="dc-drive">🚗 40 min from Kraków</div>
             <ul class="dc-list">
-              <li><span class="ico">🌿</span><a href="https://ojcowski-park-narodowy.pl/en/" target="_blank" rel="noopener">Ojców National Park</a> — 16 km from Kraków; dramatic limestone cliffs, caves &amp; easy family trails</li>
-              <li><span class="ico">🏰</span><a href="https://wawel.krakow.pl/en/departments/pieskowa-skala-castle" target="_blank" rel="noopener">Pieskowa Skała Castle</a> — stunning Renaissance castle on a sheer limestone cliff above the river</li>
-              <li><span class="ico">⚔️</span><a href="https://zamek-ogrodzieniec.pl/" target="_blank" rel="noopener">Ogrodzieniec Castle</a> — dramatic Gothic-Renaissance ruins on the plateau's highest hill</li>
+              <li><span class="ico">🌿</span><a href="https://ojcowski-park-narodowy.pl/en/" target="_blank" rel="noopener">Ojców National Park</a> — limestone cliffs, castles & easy family trails</li>
+              <li><span class="ico">🦇</span>Caves exploration (Łokietek Cave & Dark Cave)</li>
+              <li><span class="ico">🏰</span><a href="https://wawel.krakow.pl/en/departments/pieskowa-skala-castle" target="_blank" rel="noopener">Pieskowa Skała Castle</a> — Renaissance castle perched on a limestone cliff</li>
+              <li><span class="ico">🥾</span>Family hike ~6–8 km round trip along the Prądnik river valley</li>
             </ul>
-          </div>
-        </div>
-
-        <div class="dc">
-          <img class="dc-img" src="https://images.unsplash.com/photo-1533929736458-ca588d08c8be?auto=format&fit=crop&w=800&q=80" alt="Eagle's Nests Trail" onerror="this.src='https://images.unsplash.com/photo-1557495235-340eb888a9fb?auto=format&fit=crop&w=800&q=80'" />
-          <div class="dc-body">
-            <div class="dc-day">Day 4 · July 17</div>
-            <div class="dc-title">Eagle's Nests Trail → Drive to Zakopane</div>
-            <ul class="dc-list">
-              <li><span class="ico">🦅</span><a href="https://www.szlakordawichgniazd.pl/en/" target="_blank" rel="noopener">Trail of the Eagle's Nests</a> — 25 medieval castles &amp; watchtowers built by King Kazimierz the Great</li>
-              <li><span class="ico">🏯</span><a href="https://zamek-ogrodzieniec.pl/" target="_blank" rel="noopener">Ogrodzieniec Castle</a> — most spectacular Gothic ruins in Poland <span class="star-tag">⭐ Highlight</span></li>
-              <li><span class="ico">🏰</span><a href="https://www.zamek-bobolice.pl/en/" target="_blank" rel="noopener">Bobolice Castle</a> — beautifully restored medieval fortress nearby</li>
-              <li><span class="ico">🚗</span>Evening: 1.5-hour drive south to <strong>Zakopane</strong></li>
-            </ul>
+            <a class="dc-waze" href="https://waze.com/ul?q=Ojcowski+Park+Narodowy" target="_blank" rel="noopener">🔵 Waze: Ojcowski Park Narodowy</a>
           </div>
         </div>
 
       </div>
     </div>
 
+    <!-- ══ BASE 2: ZAKOPANE ══ -->
     <div class="base-block">
       <div class="base-banner">
         <div class="base-icon">🏔️</div>
         <div class="base-text">
-          <div class="base-name">Base 2 — Zakopane &amp; Tatra Mountains</div>
-          <div class="base-sub">Alpine lakes · valley hikes · river rafting · medieval castle · adventure activities · July 17–21</div>
+          <div class="base-name">Base 2 — Zakopane</div>
+          <div class="base-sub">Tatra Mountains capital · hiking · alpine coasters · thermal pools · July 17–21</div>
         </div>
-        <div class="base-pill">4 Nights</div>
+        <div class="base-pill">5 Nights</div>
       </div>
       <div class="days-grid">
 
+        <!-- Day 4 -->
         <div class="dc">
-          <img class="dc-img" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80" alt="Zakopane Tatra Mountains" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80'" />
+          <img class="dc-img"
+            src="https://images.unsplash.com/photo-1607962837359-5e7e89f86776?auto=format&fit=crop&w=800&q=80"
+            alt="Zakopane mountain town Krupówki street"
+            onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80'" />
           <div class="dc-body">
-            <div class="dc-day">Day 5 · July 17</div>
-            <div class="dc-title">Arrive Zakopane + Gubałówka Hill</div>
+            <div class="dc-day">Day 4 · July 17</div>
+            <div class="dc-title">Drive to Zakopane + Town Exploration</div>
+            <div class="dc-drive">🚗 ~2 hours from Kraków</div>
             <ul class="dc-list">
-              <li><span class="ico">🚡</span><a href="https://gubalowka.zakopane.pl/" target="_blank" rel="noopener">Gubałówka Hill</a> — historic funicular from town centre, sweeping panorama of the entire Tatra range</li>
-              <li><span class="ico">🛒</span>Summer market &amp; highland food stalls along the ridge</li>
-              <li><span class="ico">🥩</span>Evening: <a href="https://www.zakopane.pl/en/" target="_blank" rel="noopener">Krupówki Street</a> — Zakopane's lively main promenade; try oscypek (smoked sheep cheese)</li>
+              <li><span class="ico">🏨</span>Hotel check-in & settle in</li>
+              <li><span class="ico">🛍️</span><a href="https://www.zakopane.pl/en" target="_blank" rel="noopener">Krupówki Street</a> — Zakopane's famous pedestrian promenade with food stalls & shops</li>
+              <li><span class="ico">🚡</span><a href="https://www.pkl.pl/en/gubalowka" target="_blank" rel="noopener">Gubałówka Funicular</a> — short ride to panoramic Tatra views, great for first evening</li>
+            </ul>
+            <a class="dc-waze" href="https://waze.com/ul?q=Zakopane" target="_blank" rel="noopener">🔵 Waze: Zakopane</a>
+          </div>
+        </div>
+
+        <!-- Day 5 -->
+        <div class="dc">
+          <img class="dc-img"
+            src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=800&q=80"
+            alt="Morskie Oko mountain lake Tatras Poland"
+            onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80'" />
+          <div class="dc-body">
+            <div class="dc-day">Day 5 · July 18</div>
+            <div class="dc-title">Morskie Oko — The Eye of the Sea</div>
+            <div class="dc-drive">🚗 1 hour from Zakopane</div>
+            <ul class="dc-list">
+              <li><span class="ico">🏞️</span><a href="https://www.tpn.pl/en/visit/trails/morskie-oko" target="_blank" rel="noopener">Morskie Oko Lake</a> — Poland's most famous mountain lake, surrounded by peaks <span class="star-tag">⭐ Highlight</span></li>
+              <li><span class="ico">🅿️</span>Park at <strong>Palenica Białczańska</strong> — then walk or take horse carriage to the lake</li>
+              <li><span class="ico">🥾</span>~15 km round trip — paved road (flat), suitable for all ages</li>
+              <li><span class="ico">🏔️</span>Option: continue up to Czarny Staw for advanced hikers (+3 km)</li>
+            </ul>
+            <a class="dc-waze" href="https://waze.com/ul?q=Palenica+Bialczanska+Parking" target="_blank" rel="noopener">🔵 Waze: Palenica Białczańska</a>
+          </div>
+        </div>
+
+        <!-- Day 6 -->
+        <div class="dc">
+          <img class="dc-img"
+            src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=800&q=80"
+            alt="Kościeliska Valley river and mountains"
+            onerror="this.src='https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=80'" />
+          <div class="dc-body">
+            <div class="dc-day">Day 6 · July 19</div>
+            <div class="dc-title">Kościeliska Valley Hike</div>
+            <ul class="dc-list">
+              <li><span class="ico">🌊</span><a href="https://www.tpn.pl/en/visit/trails/koscieliska-valley" target="_blank" rel="noopener">Kościeliska Valley</a> — scenic river valley with bridges, caves & breathtaking mountain scenery</li>
+              <li><span class="ico">🦇</span>Mroźna Cave — easy tour with kids, impressive stalactites</li>
+              <li><span class="ico">🥾</span>~8–10 km easy family hike along the valley floor</li>
+              <li><span class="ico">🧊</span>Valley stays cool even in summer — bring a light layer</li>
             </ul>
           </div>
         </div>
 
+        <!-- Day 7 -->
         <div class="dc">
-          <img class="dc-img" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80" alt="Morskie Oko Lake" onerror="this.src='https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?auto=format&fit=crop&w=800&q=80'" />
+          <img class="dc-img"
+            src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=800&q=80"
+            alt="Alpine coaster mountain adventure"
+            onerror="this.src='https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=80'" />
           <div class="dc-body">
-            <div class="dc-day">Day 6 · July 18</div>
-            <div class="dc-title">Morskie Oko — The Crown Jewel 🌊</div>
+            <div class="dc-day">Day 7 · July 20</div>
+            <div class="dc-title">Adventure Day — Alpine Coaster & Rope Park</div>
             <ul class="dc-list">
-              <li><span class="ico">🏔️</span><a href="https://www.tpn.pl/" target="_blank" rel="noopener">Tatra National Park</a> — Poland's most beloved alpine park, small entry fee</li>
-              <li><span class="ico">🌊</span><a href="https://www.alltrails.com/trail/poland/lesser-poland/morskie-oko" target="_blank" rel="noopener">Morskie Oko ("Eye of the Sea")</a> — Poland's largest &amp; most beautiful mountain lake <span class="star-tag">⭐ Unmissable</span></li>
-              <li><span class="ico">🚶</span>Paved 2-hour round-trip walk — or take a horse-drawn carriage up!</li>
-              <li><span class="ico">❄️</span>Turquoise water ringed by granite peaks and lingering snow — breathtaking</li>
+              <li><span class="ico">🎢</span><a href="https://www.pkl.pl/en" target="_blank" rel="noopener">Zakopane Alpine Coaster</a> — thrilling mountain ride, kids go absolutely wild <span class="star-tag">⭐ Kids' Pick</span></li>
+              <li><span class="ico">🧗</span><a href="https://www.linowy.pl/" target="_blank" rel="noopener">Linowy Park (Rope Park)</a> — obstacle courses at multiple heights, great for ages 7+</li>
+              <li><span class="ico">🏔️</span>Mountain viewpoints & cable car rides for panoramic photos</li>
+              <li><span class="ico">🍕</span>Celebrate the day with dinner in Zakopane town center</li>
             </ul>
           </div>
         </div>
 
+        <!-- Day 8 -->
         <div class="dc">
-          <img class="dc-img" src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=80" alt="Dolina Kościeliska Valley" onerror="this.src='https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80'" />
+          <img class="dc-img"
+            src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80"
+            alt="Thermal baths outdoor pools spa"
+            onerror="this.src='https://images.unsplash.com/photo-1535498730771-e735b998cd64?auto=format&fit=crop&w=800&q=80'" />
           <div class="dc-body">
-            <div class="dc-day">Day 7 · July 19</div>
-            <div class="dc-title">Dolina Kościeliska Valley + Caves</div>
+            <div class="dc-day">Day 8 · July 21</div>
+            <div class="dc-title">Chochołowskie Termy — Water Park Day</div>
+            <div class="dc-drive">🚗 25 min from Zakopane</div>
             <ul class="dc-list">
-              <li><span class="ico">🏞️</span><a href="https://www.tpn.pl/explore/hiking-trails/dolina-koscieliska" target="_blank" rel="noopener">Kościeliska Valley</a> — easy trail through spectacular limestone scenery, streams &amp; forest</li>
-              <li><span class="ico">🦇</span>Small caves &amp; grottos along the route — peek inside with the kids</li>
-              <li><span class="ico">⏱️</span>3–4 hour relaxed walk, suitable for all ages; 20 min drive from Zakopane</li>
-              <li><span class="ico">♨️</span>Afternoon: relax in Zakopane's thermal pools</li>
+              <li><span class="ico">🌊</span><a href="https://www.chocholowskietermy.pl/" target="_blank" rel="noopener">Chochołowskie Termy</a> — outdoor & indoor thermal pools with mountain backdrop <span class="star-tag">⭐ Best Water Day</span></li>
+              <li><span class="ico">🎢</span>Multiple water slides & pools for all ages</li>
+              <li><span class="ico">🏊</span>Full day of swimming, slides & relaxation — the only water-focused day</li>
+              <li><span class="ico">💡</span>Book tickets in advance: <a href="https://www.chocholowskietermy.pl/" target="_blank" rel="noopener">chocholowskietermy.pl</a></li>
             </ul>
-          </div>
-        </div>
-
-        <div class="dc">
-          <img class="dc-img" src="https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=800&q=80" alt="Dunajec River Rafting" onerror="this.src='https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?auto=format&fit=crop&w=800&q=80'" />
-          <div class="dc-body">
-            <div class="dc-day">Day 8 · July 20</div>
-            <div class="dc-title">Pieniny: Dunajec Rafting + Niedzica Castle 🏰</div>
-            <ul class="dc-list">
-              <li><span class="ico">🚣</span><a href="https://www.flisacy.com.pl/" target="_blank" rel="noopener">Dunajec River Rafting (Flisacy)</a> — 1–2 hr traditional raft through a dramatic gorge on the Polish-Slovak border <span class="star-tag">⭐ Kids' Pick</span></li>
-              <li><span class="ico">🎟️</span><a href="https://www.getyourguide.com/krakow-l35/dunajec-river-rafting-t44234/" target="_blank" rel="noopener">Book via GetYourGuide</a> — skip the queue, guaranteed spots</li>
-              <li><span class="ico">🏰</span><a href="https://www.zamekniedzica.pl/en/" target="_blank" rel="noopener">Niedzica Castle</a> — 14th-century fortress above Czorsztyn Lake, legend of a lost Inca treasure</li>
-              <li><span class="ico">🗺️</span>~1.5 hours from Zakopane via Nowy Targ</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="dc">
-          <img class="dc-img" src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=800&q=80" alt="Adventure Day Zakopane" onerror="this.src='https://images.unsplash.com/photo-1563299796-17596ed6b017?auto=format&fit=crop&w=800&q=80'" />
-          <div class="dc-body">
-            <div class="dc-day">Day 9 · July 21</div>
-            <div class="dc-title">Free Adventure Day + Drive to Kraków</div>
-            <ul class="dc-list">
-              <li><span class="ico">🧗</span>Ropes course &amp; zip-lines (Park Linowy) — tree-top trails for every age group</li>
-              <li><span class="ico">🛷</span><a href="https://gubalowka.zakopane.pl/" target="_blank" rel="noopener">Gubałówka Summer Toboggan</a> — long downhill slide the kids will want to ride again and again</li>
-              <li><span class="ico">🌀</span>Zorbing — giant inflatable ball rolling down a Tatra hillside</li>
-              <li><span class="ico">🚗</span>Evening: 1.5-hour drive back to <strong>Kraków</strong></li>
-            </ul>
+            <a class="dc-waze" href="https://waze.com/ul?q=Chocholowskie+Termy" target="_blank" rel="noopener">🔵 Waze: Chochołowskie Termy</a>
           </div>
         </div>
 
       </div>
     </div>
 
+    <!-- ══ BASE 3: SZCZYRK ══ -->
     <div class="base-block">
       <div class="base-banner">
-        <div class="base-icon">🏙️</div>
+        <div class="base-icon">⛰️</div>
         <div class="base-text">
-          <div class="base-name">Base 3 — Back to Kraków</div>
-          <div class="base-sub">Immersive museums · Jewish Quarter finale · last shopping · July 21–25</div>
+          <div class="base-name">Base 3 — Szczyrk</div>
+          <div class="base-sub">Beskid Mountains · cable cars · Góra Żar adventure · July 22–24</div>
         </div>
-        <div class="base-pill">2 Nights</div>
+        <div class="base-pill">3 Nights</div>
       </div>
       <div class="days-grid">
 
+        <!-- Day 9 -->
         <div class="dc">
-          <img class="dc-img" src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=800&q=80" alt="Womai Museum Kraków" onerror="this.src='https://images.unsplash.com/photo-1509773896068-7fd415d91e2e?auto=format&fit=crop&w=800&q=80'" />
+          <img class="dc-img"
+            src="https://images.unsplash.com/photo-1490623970972-ae8bb3da443e?auto=format&fit=crop&w=800&q=80"
+            alt="Beskid mountains Szczyrk landscape"
+            onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80'" />
+          <div class="dc-body">
+            <div class="dc-day">Day 9 · July 22</div>
+            <div class="dc-title">Drive to Szczyrk + Explore</div>
+            <div class="dc-drive">🚗 1 hr 40 min from Zakopane</div>
+            <ul class="dc-list">
+              <li><span class="ico">🏨</span>Hotel check-in in Szczyrk</li>
+              <li><span class="ico">🚶</span>Town exploration — charming Beskid mountain resort</li>
+              <li><span class="ico">🌄</span>Easy afternoon walk to enjoy the different mountain scenery of the Beskids</li>
+            </ul>
+            <a class="dc-waze" href="https://waze.com/ul?q=Szczyrk" target="_blank" rel="noopener">🔵 Waze: Szczyrk</a>
+          </div>
+        </div>
+
+        <!-- Day 10 -->
+        <div class="dc">
+          <img class="dc-img"
+            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80"
+            alt="Szczyrk mountain resort cable car panorama"
+            onerror="this.src='https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=80'" />
           <div class="dc-body">
             <div class="dc-day">Day 10 · July 23</div>
-            <div class="dc-title">Womai Museum + Kazimierz Evening</div>
+            <div class="dc-title">Szczyrk Mountain Resort</div>
             <ul class="dc-list">
-              <li><span class="ico">🔮</span><a href="https://womai.pl/" target="_blank" rel="noopener">Womai Immersive Museum</a> — "In the Light" optics room &amp; "In the Dark" total-darkness sensory journey <span class="star-tag">⭐ Ages 7–11</span></li>
-              <li><span class="ico">🍽️</span>Final dinner in <a href="https://www.krakow.pl/english/7405,main.html" target="_blank" rel="noopener">Kazimierz</a> — Kraków's most atmospheric neighbourhood for food &amp; drinks</li>
-              <li><span class="ico">🦁</span>Option: <a href="https://zoo.krakow.pl/en/" target="_blank" rel="noopener">Kraków Zoo</a> — 1,400 animals from 300 species, hands-on petting area</li>
+              <li><span class="ico">🚡</span><a href="https://www.szczyrkowski.pl/en/" target="_blank" rel="noopener">Szczyrk Mountain Resort</a> — cable cars to the mountain ridge with incredible panoramic views</li>
+              <li><span class="ico">🥾</span>Mountain ridge hiking ~5–8 km with breathtaking Beskid scenery</li>
+              <li><span class="ico">📸</span>Panoramic viewpoints — fantastic photo opportunities for the whole family</li>
             </ul>
           </div>
         </div>
 
+        <!-- Day 11 -->
         <div class="dc">
-          <img class="dc-img" src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=800&q=80" alt="Last morning in Kraków" onerror="this.src='https://images.unsplash.com/photo-1499856843586-e98fafba1d43?auto=format&fit=crop&w=800&q=80'" />
+          <img class="dc-img"
+            src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80"
+            alt="Góra Żar mountain lake funicular"
+            onerror="this.src='https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=800&q=80'" />
           <div class="dc-body">
-            <div class="dc-day">Day 11 · July 25</div>
-            <div class="dc-title">Last Morning + Flight Home ✈️</div>
+            <div class="dc-day">Day 11 · July 24</div>
+            <div class="dc-title">Góra Żar — Best Family Day! 🌟</div>
+            <div class="dc-drive">🚗 40 min from Szczyrk</div>
             <ul class="dc-list">
-              <li><span class="ico">🛍️</span>Morning shopping at <a href="https://www.krakow.pl/english/" target="_blank" rel="noopener">Rynek Główny</a> — Polish pottery, amber jewellery &amp; linen</li>
-              <li><span class="ico">🚗</span>Return rental cars at <a href="https://krakowairport.pl/en/" target="_blank" rel="noopener">KRK Airport</a></li>
-              <li><span class="ico">✈️</span>Direct flight back to Tel Aviv — take only memories 🇮🇱</li>
+              <li><span class="ico">🚡</span><a href="https://www.gorazar.pl/" target="_blank" rel="noopener">Góra Żar Funicular</a> — scenic ride up to the mountain summit <span class="best-day-tag">🌟 Best Day</span></li>
+              <li><span class="ico">🎢</span>Alpine Coaster at Góra Żar — one of Poland's most exciting mountain coasters</li>
+              <li><span class="ico">🏞️</span>Jezioro Międzybrodzkie (mountain lake) — beautiful views & peaceful picnic spot</li>
+              <li><span class="ico">🌅</span>Spectacular scenic viewpoints overlooking the Żywiec reservoir</li>
+            </ul>
+            <a class="dc-waze" href="https://waze.com/ul?q=Gora+Zar" target="_blank" rel="noopener">🔵 Waze: Góra Żar</a>
+          </div>
+        </div>
+
+        <!-- Day 12 -->
+        <div class="dc">
+          <img class="dc-img"
+            src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80"
+            alt="Airport departure flight home"
+            onerror="this.src='https://images.unsplash.com/photo-1556388158-158ea5ccacbd?auto=format&fit=crop&w=800&q=80'" />
+          <div class="dc-body">
+            <div class="dc-day">Day 12 · July 25</div>
+            <div class="dc-title">Return to Kraków Airport ✈️</div>
+            <div class="dc-drive">🚗 ~1 hr 15 min to KRK</div>
+            <ul class="dc-list">
+              <li><span class="ico">🏨</span>Hotel checkout & load up the cars</li>
+              <li><span class="ico">🚗</span>Drive ~1 hr 15 min to <a href="https://krakowairport.pl/en/" target="_blank" rel="noopener">Kraków Airport (KRK)</a></li>
+              <li><span class="ico">🛒</span>Last chance for Polish souvenirs at airport shops</li>
+              <li><span class="ico">✈️</span>Flight home — with incredible memories!</li>
             </ul>
           </div>
         </div>
 
       </div>
     </div>
+
   </div>
 </section>
 
-<section id="gallery">
+<!-- ─── DRIVING TABLE ─── -->
+<section id="driving">
   <div class="container">
     <div class="sec-head">
-      <span class="sec-tag">📸 Destinations</span>
-      <h2 class="sec-title">Places You'll Explore</h2>
-      <p class="sec-desc">Hover over each destination for its name. Click to open the official site.</p>
+      <span class="sec-tag">🚗 On the Road</span>
+      <h2 class="sec-title">Driving Times Summary</h2>
+      <p class="sec-desc">All driving segments under 2 hours — family-friendly distances throughout the trip.</p>
     </div>
-    <div class="gallery-grid">
-      <a class="gc" href="https://wawel.krakow.pl/en" target="_blank" rel="noopener">
-        <img src="https://images.unsplash.com/photo-1582553421609-e58a5897b4a0?auto=format&fit=crop&w=600&q=80" alt="Wawel Castle" onerror="this.src='https://images.unsplash.com/photo-1533929736458-ca588d08c8be?auto=format&fit=crop&w=600&q=80'" />
-        <div class="gc-label">🏰 Wawel Castle, Kraków</div>
-      </a>
-      <a class="gc" href="https://www.wieliczka-saltmine.com/" target="_blank" rel="noopener">
-        <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=600&q=80" alt="Wieliczka Salt Mine" onerror="this.src='https://images.unsplash.com/photo-1509773896068-7fd415d91e2e?auto=format&fit=crop&w=600&q=80'" />
-        <div class="gc-label">⛏️ Wieliczka Salt Mine</div>
-      </a>
-      <a class="gc" href="https://ojcowski-park-narodowy.pl/en/" target="_blank" rel="noopener">
-        <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=600&q=80" alt="Ojców National Park" onerror="this.src='https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=80'" />
-        <div class="gc-label">🌿 Ojców National Park</div>
-      </a>
-      <a class="gc" href="https://zamek-ogrodzieniec.pl/" target="_blank" rel="noopener">
-        <img src="https://images.unsplash.com/photo-1533929736458-ca588d08c8be?auto=format&fit=crop&w=600&q=80" alt="Ogrodzieniec Castle" onerror="this.src='https://images.unsplash.com/photo-1551279880-03042bdc5600?auto=format&fit=crop&w=600&q=80'" />
-        <div class="gc-label">🦅 Ogrodzieniec Castle</div>
-      </a>
-      <a class="gc" href="https://www.tpn.pl/" target="_blank" rel="noopener">
-        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=80" alt="Morskie Oko" onerror="this.src='https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80'" />
-        <div class="gc-label">🏔️ Morskie Oko, Tatras</div>
-      </a>
-      <a class="gc" href="https://www.flisacy.com.pl/" target="_blank" rel="noopener">
-        <img src="https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=600&q=80" alt="Dunajec River Rafting" onerror="this.src='https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?auto=format&fit=crop&w=600&q=80'" />
-        <div class="gc-label">🚣 Dunajec Rafting, Pieniny</div>
-      </a>
-      <a class="gc" href="https://www.zamekniedzica.pl/en/" target="_blank" rel="noopener">
-        <img src="https://images.unsplash.com/photo-1557409518-691ebcd96038?auto=format&fit=crop&w=600&q=80" alt="Niedzica Castle" onerror="this.src='https://images.unsplash.com/photo-1533929736458-ca588d08c8be?auto=format&fit=crop&w=600&q=80'" />
-        <div class="gc-label">🏰 Niedzica Castle</div>
-      </a>
-      <a class="gc" href="https://gubalowka.zakopane.pl/" target="_blank" rel="noopener">
-        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80" alt="Gubałówka Zakopane" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=80'" />
-        <div class="gc-label">🚡 Gubałówka, Zakopane</div>
-      </a>
-    </div>
+    <table class="drive-table">
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Route</th>
+          <th>Distance</th>
+          <th>Drive Time</th>
+          <th>Waze</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Day 1</td>
+          <td>TLV → Kraków Airport → Hotel</td>
+          <td>—</td>
+          <td class="drive-time">Flight ~4h</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Day 2</td>
+          <td>Kraków → Wieliczka Salt Mine</td>
+          <td>~15 km</td>
+          <td class="drive-time">~20 min</td>
+          <td><a href="https://waze.com/ul?q=Wieliczka+Salt+Mine" target="_blank" rel="noopener">Navigate →</a></td>
+        </tr>
+        <tr>
+          <td>Day 3</td>
+          <td>Kraków → Ojców National Park</td>
+          <td>~25 km</td>
+          <td class="drive-time">~40 min</td>
+          <td><a href="https://waze.com/ul?q=Ojcowski+Park+Narodowy" target="_blank" rel="noopener">Navigate →</a></td>
+        </tr>
+        <tr>
+          <td>Day 4</td>
+          <td>Kraków → Zakopane</td>
+          <td>~110 km</td>
+          <td class="drive-time">~2 hours</td>
+          <td><a href="https://waze.com/ul?q=Zakopane" target="_blank" rel="noopener">Navigate →</a></td>
+        </tr>
+        <tr>
+          <td>Day 5</td>
+          <td>Zakopane → Palenica Białczańska (Morskie Oko)</td>
+          <td>~20 km</td>
+          <td class="drive-time">~1 hour</td>
+          <td><a href="https://waze.com/ul?q=Palenica+Bialczanska" target="_blank" rel="noopener">Navigate →</a></td>
+        </tr>
+        <tr>
+          <td>Day 8</td>
+          <td>Zakopane → Chochołowskie Termy</td>
+          <td>~18 km</td>
+          <td class="drive-time">~25 min</td>
+          <td><a href="https://waze.com/ul?q=Chocholowskie+Termy" target="_blank" rel="noopener">Navigate →</a></td>
+        </tr>
+        <tr>
+          <td>Day 9</td>
+          <td>Zakopane → Szczyrk</td>
+          <td>~90 km</td>
+          <td class="drive-time">~1 hr 40 min</td>
+          <td><a href="https://waze.com/ul?q=Szczyrk" target="_blank" rel="noopener">Navigate →</a></td>
+        </tr>
+        <tr>
+          <td>Day 11</td>
+          <td>Szczyrk → Góra Żar</td>
+          <td>~35 km</td>
+          <td class="drive-time">~40 min</td>
+          <td><a href="https://waze.com/ul?q=Gora+Zar" target="_blank" rel="noopener">Navigate →</a></td>
+        </tr>
+        <tr>
+          <td>Day 12</td>
+          <td>Szczyrk → Kraków Airport</td>
+          <td>~85 km</td>
+          <td class="drive-time">~1 hr 15 min</td>
+          <td><a href="https://waze.com/ul?q=Krakow+Airport" target="_blank" rel="noopener">Navigate →</a></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </section>
 
+<!-- ─── HOTELS ─── -->
 <section id="hotels">
   <div class="container">
     <div class="sec-head">
       <span class="sec-tag">🏨 Where to Stay</span>
       <h2 class="sec-title">Hotel Recommendations</h2>
-      <p class="sec-desc">Selected for connecting rooms, family amenities &amp; location. Prices are peak-season estimates (July), 2 rooms per night.</p>
+      <p class="sec-desc">Family-friendly hotels at all three bases. Book early — July is peak season in Poland!</p>
     </div>
 
+    <!-- Kraków -->
     <div class="hotel-group">
-      <div class="hotel-group-title">🏰 Kraków — 3 Nights <span style="font-size:0.9rem;font-weight:400;color:var(--gray)">(July 14–17 &amp; 21–23)</span></div>
+      <div class="hotel-group-title">🏰 Kraków — 3 Nights (Days 1–3)</div>
       <div class="hotels-grid">
         <div class="hc">
+          <img class="hc-img"
+            src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=700&q=80"
+            alt="Hyatt Place Krakow hotel"
+            onerror="this.src='https://images.unsplash.com/photo-1455587734955-081b22074882?auto=format&fit=crop&w=700&q=80'" />
           <div class="hc-badge">Recommended</div>
-          <img class="hc-img" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=700&q=80" alt="Qubus Hotel Krakow" onerror="this.src='https://images.unsplash.com/photo-1455587734955-081b22074882?auto=format&fit=crop&w=700&q=80'" />
           <div class="hc-body">
             <div class="hc-stars">★★★★</div>
-            <div class="hc-name">Qubus Hotel Kraków</div>
-            <div class="hc-price">From <strong>$130–$170</strong> / room / night</div>
-            <div class="hc-total">~$780–$1,020 total (3 nights × 2 rooms)</div>
+            <div class="hc-name">Hyatt Place Kraków</div>
             <div class="hc-tags">
-              <span class="htag">🏊 Rooftop Pool &amp; Jacuzzi</span>
-              <span class="htag">🍳 100+ Breakfast Items</span>
-              <span class="htag">🅿️ Parking</span>
-              <span class="htag">🛏️ Connecting Rooms</span>
+              <span class="htag">🏊 Pool</span>
+              <span class="htag">🍳 Breakfast</span>
+              <span class="htag">📍 City Centre</span>
+              <span class="htag">🛏️ Family Rooms</span>
             </div>
-            <a href="https://www.booking.com/hotel/pl/qubuskrakow.html" target="_blank" rel="noopener" class="btn-book">🔵 Book on Booking.com →</a>
+            <a href="https://www.hyatt.com/hyatt-place/en-US/krpzk-hyatt-place-krakow" target="_blank" rel="noopener" class="btn-book">🔵 View on Hyatt →</a>
           </div>
         </div>
         <div class="hc">
-          <img class="hc-img" src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=700&q=80" alt="Sheraton Grand Kraków" onerror="this.src='https://images.unsplash.com/photo-1455587734955-081b22074882?auto=format&fit=crop&w=700&q=80'" />
+          <img class="hc-img"
+            src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=700&q=80"
+            alt="Mercure Krakow Stare Miasto hotel"
+            onerror="this.src='https://images.unsplash.com/photo-1455587734955-081b22074882?auto=format&fit=crop&w=700&q=80'" />
           <div class="hc-body">
-            <div class="hc-stars">★★★★★</div>
-            <div class="hc-name">Sheraton Grand Kraków</div>
-            <div class="hc-price">From <strong>$175–$250</strong> / room / night</div>
-            <div class="hc-total">~$1,050–$1,500 total (3 nights × 2 rooms)</div>
+            <div class="hc-stars">★★★★</div>
+            <div class="hc-name">Mercure Kraków Stare Miasto</div>
             <div class="hc-tags">
-              <span class="htag">🏊 Pool &amp; Spa</span>
-              <span class="htag">🍳 Breakfast</span>
-              <span class="htag">📍 Next to Wawel</span>
-              <span class="htag">🛏️ Suites Available</span>
+              <span class="htag">📍 Old Town</span>
+              <span class="htag">🍽️ Restaurant</span>
+              <span class="htag">🅿️ Parking</span>
             </div>
-            <a href="https://www.booking.com/hotel/pl/sheraton-krakow.html" target="_blank" rel="noopener" class="btn-book">🔵 Book on Booking.com →</a>
+            <a href="https://all.accor.com/hotel/1787/index.en.shtml" target="_blank" rel="noopener" class="btn-book">🔵 View on Accor →</a>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- Zakopane -->
     <div class="hotel-group">
-      <div class="hotel-group-title">🏔️ Zakopane — 4 Nights <span style="font-size:0.9rem;font-weight:400;color:var(--gray)">(July 17–21)</span></div>
+      <div class="hotel-group-title">🏔️ Zakopane — 5 Nights (Days 4–8)</div>
       <div class="hotels-grid">
         <div class="hc">
-          <div class="hc-badge">Recommended</div>
-          <img class="hc-img" src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=700&q=80" alt="Aries Hotel Zakopane" onerror="this.src='https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=700&q=80'" />
-          <div class="hc-body">
-            <div class="hc-stars">★★★★★</div>
-            <div class="hc-name">Aries Hotel &amp; Spa Zakopane</div>
-            <div class="hc-price">From <strong>$250–$350</strong> / room / night</div>
-            <div class="hc-total">~$2,000–$2,800 total (4 nights × 2 rooms)</div>
-            <div class="hc-tags">
-              <span class="htag">🌊 Adjacent Aquapark</span>
-              <span class="htag">♨️ Hot Pools</span>
-              <span class="htag">🎮 Kids' Animation</span>
-              <span class="htag">🛏️ Connecting Rooms</span>
-            </div>
-            <a href="https://www.booking.com/hotel/pl/aries-spa-zakopane.html" target="_blank" rel="noopener" class="btn-book">🔵 Book on Booking.com →</a>
-          </div>
-        </div>
-        <div class="hc">
-          <img class="hc-img" src="https://images.unsplash.com/photo-1601918774946-25832a4be0d6?auto=format&fit=crop&w=700&q=80" alt="Bachleda Hotel Kasprowy" onerror="this.src='https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=700&q=80'" />
+          <img class="hc-img"
+            src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=700&q=80"
+            alt="Hotel Aquarion Zakopane family resort with pools"
+            onerror="this.src='https://images.unsplash.com/photo-1455587734955-081b22074882?auto=format&fit=crop&w=700&q=80'" />
+          <div class="hc-badge">Top Pick</div>
           <div class="hc-body">
             <div class="hc-stars">★★★★</div>
-            <div class="hc-name">Bachleda Hotel Kasprowy</div>
-            <div class="hc-price">From <strong>$150–$220</strong> / room / night</div>
-            <div class="hc-total">~$1,200–$1,760 total (4 nights × 2 rooms)</div>
+            <div class="hc-name">Hotel Aquarion Family & Friends</div>
             <div class="hc-tags">
-              <span class="htag">🏊 Pool &amp; Spa</span>
-              <span class="htag">🍳 Huge Breakfast</span>
-              <span class="htag">📍 Krupówki St</span>
-              <span class="htag">⭐ Top-rated</span>
+              <span class="htag">🏊 Aqua Park</span>
+              <span class="htag">👨‍👩‍👧 Family Rooms</span>
+              <span class="htag">🧖 Spa</span>
+              <span class="htag">🍳 Breakfast</span>
             </div>
-            <a href="https://www.booking.com/hotel/pl/bachledahotelkasprowy.html" target="_blank" rel="noopener" class="btn-book">🔵 Book on Booking.com →</a>
+            <a href="https://www.hotelaquarion.pl/en/" target="_blank" rel="noopener" class="btn-book">🔵 Hotel Aquarion →</a>
           </div>
         </div>
         <div class="hc">
-          <img class="hc-img" src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=700&q=80" alt="Radisson Blu Zakopane" onerror="this.src='https://images.unsplash.com/photo-1455587734955-081b22074882?auto=format&fit=crop&w=700&q=80'" />
+          <img class="hc-img"
+            src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=700&q=80"
+            alt="Nosalowy Dwor Resort Zakopane"
+            onerror="this.src='https://images.unsplash.com/photo-1455587734955-081b22074882?auto=format&fit=crop&w=700&q=80'" />
           <div class="hc-body">
             <div class="hc-stars">★★★★★</div>
-            <div class="hc-name">Radisson Blu Zakopane</div>
-            <div class="hc-price">From <strong>$180–$260</strong> / room / night</div>
-            <div class="hc-total">~$1,440–$2,080 total (4 nights × 2 rooms)</div>
+            <div class="hc-name">Nosalowy Dwór Resort & Spa</div>
             <div class="hc-tags">
               <span class="htag">🏊 Pool</span>
               <span class="htag">🧖 Spa</span>
-              <span class="htag">📍 Town Centre</span>
-              <span class="htag">🛏️ Family Rooms</span>
+              <span class="htag">🏔️ Mountain Views</span>
+              <span class="htag">🍽️ Restaurant</span>
             </div>
-            <a href="https://www.booking.com/hotel/pl/radisson-blu-zakopane.html" target="_blank" rel="noopener" class="btn-book">🔵 Book on Booking.com →</a>
+            <a href="https://www.nosalowy.pl/en" target="_blank" rel="noopener" class="btn-book">🔵 Nosalowy Dwór →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Szczyrk -->
+    <div class="hotel-group">
+      <div class="hotel-group-title">⛰️ Szczyrk — 3 Nights (Days 9–11)</div>
+      <div class="hotels-grid">
+        <div class="hc">
+          <img class="hc-img"
+            src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=700&q=80"
+            alt="Mercure Szczyrk Resort hotel mountain"
+            onerror="this.src='https://images.unsplash.com/photo-1455587734955-081b22074882?auto=format&fit=crop&w=700&q=80'" />
+          <div class="hc-badge">Recommended</div>
+          <div class="hc-body">
+            <div class="hc-stars">★★★★</div>
+            <div class="hc-name">Mercure Szczyrk Resort</div>
+            <div class="hc-tags">
+              <span class="htag">🏊 Pool</span>
+              <span class="htag">🧖 Spa</span>
+              <span class="htag">🏔️ Mountain Views</span>
+              <span class="htag">🍽️ Restaurant</span>
+            </div>
+            <a href="https://all.accor.com/hotel/9694/index.en.shtml" target="_blank" rel="noopener" class="btn-book">🔵 View on Accor →</a>
+          </div>
+        </div>
+        <div class="hc">
+          <img class="hc-img"
+            src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=700&q=80"
+            alt="Hotel META Resort Vine & SPA Szczyrk"
+            onerror="this.src='https://images.unsplash.com/photo-1455587734955-081b22074882?auto=format&fit=crop&w=700&q=80'" />
+          <div class="hc-body">
+            <div class="hc-stars">★★★★</div>
+            <div class="hc-name">Hotel META Resort Vine & SPA</div>
+            <div class="hc-tags">
+              <span class="htag">🍷 Wine Spa</span>
+              <span class="htag">🏊 Pool</span>
+              <span class="htag">👨‍👩‍👧 Family</span>
+              <span class="htag">🏔️ Views</span>
+            </div>
+            <a href="https://www.booking.com/hotel/pl/meta-resort-vine-amp-spa.html" target="_blank" rel="noopener" class="btn-book">🔵 Book on Booking.com →</a>
           </div>
         </div>
       </div>
@@ -811,18 +998,20 @@
       <div class="tip-box-icon">💡</div>
       <div>
         <strong>Pro Tip for Two Families</strong>
-        <p>Always <strong>request connecting rooms in writing</strong> directly with the hotel after booking online. An even smarter option: search for large <a href="https://www.booking.com/searchresults.html?ss=krakow+apartment" target="_blank" rel="noopener">Kraków apartments</a> and <a href="https://www.booking.com/searchresults.html?ss=zakopane+apartment" target="_blank" rel="noopener">Zakopane apartments</a> that sleep 6–8 — shared kitchen &amp; living room, often <strong>30–40% cheaper</strong> than two separate hotel rooms.</p>
+        <p>Always <strong>request connecting rooms in writing</strong> directly with the hotel after booking online. Even better — search for large <a href="https://www.booking.com/searchresults.html?ss=zakopane+apartment" target="_blank" rel="noopener">Zakopane apartments</a> that sleep 6–8 people — shared kitchen & living room, often <strong>30–40% cheaper</strong> than two hotel rooms!</p>
       </div>
     </div>
+
   </div>
 </section>
 
+<!-- ─── FLIGHTS ─── -->
 <section id="flights">
   <div class="container">
     <div class="sec-head">
       <span class="sec-tag" style="color:var(--gold2)">✈️ Getting There</span>
-      <h2 class="sec-title">Flights: Tel Aviv ↔ Kraków</h2>
-      <p class="sec-desc">Three airlines fly direct TLV → KRK (~4 hours). July is peak season — book as early as possible.</p>
+      <h2 class="sec-title" style="color:#fff">Flights: Tel Aviv ↔ Kraków</h2>
+      <p class="sec-desc" style="color:rgba(255,255,255,0.65)">Three airlines fly direct TLV → KRK (~4 hours). July is peak season — book as early as possible!</p>
     </div>
     <div class="flights-grid">
       <div class="fc">
@@ -839,7 +1028,7 @@
       </div>
       <div class="fc">
         <div class="fc-logo">🇵🇱</div>
-        <div class="fc-name">LOT Polish</div>
+        <div class="fc-name">LOT Polish Airlines</div>
         <div class="fc-info">Direct from June 2026<br>TLV → KRK · ~4 hours<br>Poland's national carrier</div>
         <a href="https://www.lot.com/" target="_blank" rel="noopener" class="btn-airline">Search LOT →</a>
       </div>
@@ -847,18 +1036,17 @@
         <div class="fc-logo">🔍</div>
         <div class="fc-name">Compare All</div>
         <div class="fc-info">Jul 14 departure<br>Jul 25 return<br>TLV ↔ KRK</div>
-        <a href="https://www.google.com/flights?hl=en#flt=TLV.KRK.2026-07-14*KRK.TLV.2026-07-25;c:USD;e:1;sd:1;t:f" target="_blank" rel="noopener" class="btn-airline">Google Flights →</a>
+        <a href="https://www.google.com/flights#flt=TLV.KRK.2026-07-14*KRK.TLV.2026-07-25" target="_blank" rel="noopener" class="btn-airline">Google Flights →</a>
       </div>
     </div>
     <div class="flights-cta">
-      <p>💡 <strong style="color:var(--gold)">Tip:</strong> Tuesday / Wednesday departures are usually cheapest. July is Poland's peak month — book as early as possible.</p>
-      <a href="https://www.google.com/flights?hl=en#flt=TLV.KRK.2026-07-14*KRK.TLV.2026-07-25;c:USD;e:1;sd:1;t:f" target="_blank" rel="noopener" class="btn-gf">
-        🔍 Find Best Flight Price on Google Flights
-      </a>
+      <p>💡 <strong style="color:var(--gold)">Tip:</strong> Tuesday/Wednesday departures are usually cheapest. July is Poland's peak tourist month — the earlier you book, the better the price.</p>
+      <a href="https://www.google.com/flights#flt=TLV.KRK.2026-07-14*KRK.TLV.2026-07-25" target="_blank" rel="noopener" class="btn-gf">🔍 Find Best Flights on Google Flights</a>
     </div>
   </div>
 </section>
 
+<!-- ─── TIPS ─── -->
 <section id="tips">
   <div class="container">
     <div class="sec-head">
@@ -867,42 +1055,146 @@
       <p class="sec-desc">Everything two families need for a smooth and memorable trip through Poland.</p>
     </div>
     <div class="tips-grid">
-      <div class="tc"><div class="tc-icon">📅</div><div class="tc-title">Book Everything Now</div><div class="tc-text">July is Poland's absolute peak. Book hotels, <strong>Wieliczka tickets</strong> and Dunajec rafting <em>immediately</em>. Popular slots go weeks in advance.</div></div>
-      <div class="tc"><div class="tc-icon">🚗</div><div class="tc-title">Two Rental Cars</div><div class="tc-text">Essential for two families. Book family SUVs (VW Tiguan / Skoda Kodiaq) via <strong>Hertz, Avis or Sixt</strong> at KRK Airport. Pre-order child seats for ages 7 &amp; 11.</div></div>
-      <div class="tc"><div class="tc-icon">💰</div><div class="tc-title">Currency: Polish Złoty</div><div class="tc-text">Poland uses <strong>PLN (Złoty)</strong>. €1 ≈ 4.3 PLN. Cards accepted almost everywhere. Carry cash for small stalls, national park fees &amp; tips.</div></div>
-      <div class="tc"><div class="tc-icon">🌦️</div><div class="tc-title">July Weather</div><div class="tc-text">Kraków: 22–28°C, sunny &amp; lovely. Tatras: afternoon showers are common — <strong>pack light rain jackets</strong> for everyone. Mountain mornings can be cool.</div></div>
-      <div class="tc"><div class="tc-icon">👟</div><div class="tc-title">Footwear Is Key</div><div class="tc-text">Bring <strong>proper hiking shoes</strong> for the whole family — needed for Tatra trails and Eagle's Nests castle hikes. Light trainers for city days.</div></div>
-      <div class="tc"><div class="tc-icon">🏔️</div><div class="tc-title">Tatra Park Entry Fee</div><div class="tc-text">Small fee per person at <a href="https://www.tpn.pl/" target="_blank" rel="noopener">Tatra National Park</a> entrance gates — cash or card. Worth every grosz for the scenery.</div></div>
-      <div class="tc"><div class="tc-icon">🛏️</div><div class="tc-title">Two-Family Rooms</div><div class="tc-text">Request <strong>connecting rooms in writing</strong> after online booking. Or rent a large apartment for 6–8 people — more space, shared kitchen, 30–40% cheaper.</div></div>
-      <div class="tc"><div class="tc-icon">🗺️</div><div class="tc-title">Useful Apps</div><div class="tc-text"><a href="https://maps.google.com" target="_blank" rel="noopener">Google Maps</a> (download Poland offline) · <a href="https://translate.google.com" target="_blank" rel="noopener">Google Translate</a> with Polish offline · <a href="https://www.alltrails.com" target="_blank" rel="noopener">AllTrails</a> for Tatra hiking routes</div></div>
+      <div class="tc">
+        <div class="tc-icon">📅</div>
+        <div class="tc-title">Book Everything in Advance</div>
+        <div class="tc-text">July is Poland's absolute peak season. Book hotels AND <strong><a href="https://bilet.wieliczka-saltmine.com/" target="_blank" rel="noopener">Wieliczka Salt Mine tickets</a></strong> immediately. Popular slots sell out weeks ahead!</div>
+      </div>
+      <div class="tc">
+        <div class="tc-icon">🚗</div>
+        <div class="tc-title">Two Rental Cars</div>
+        <div class="tc-text">Essential for two families. Book family SUVs (VW Tiguan / Skoda Kodiaq) via <strong>Hertz, Avis or Sixt</strong> at KRK Airport. Pre-order child seats for ages 7–11.</div>
+      </div>
+      <div class="tc">
+        <div class="tc-icon">💰</div>
+        <div class="tc-title">Currency: Polish Złoty (PLN)</div>
+        <div class="tc-text">Poland uses <strong>PLN</strong>. €1 ≈ 4.3 PLN · $1 ≈ 4.0 PLN. Cards accepted almost everywhere. Carry some cash for national park fees & smaller stalls.</div>
+      </div>
+      <div class="tc">
+        <div class="tc-icon">🌦️</div>
+        <div class="tc-title">July Weather</div>
+        <div class="tc-text">Kraków: 22–28°C, sunny. Tatras & Beskids: afternoon showers common — <strong>pack light rain jackets for everyone</strong>. Mountain mornings can be cool.</div>
+      </div>
+      <div class="tc">
+        <div class="tc-icon">👟</div>
+        <div class="tc-title">Footwear Is Everything</div>
+        <div class="tc-text">Bring <strong>proper hiking shoes</strong> for the whole family. Needed for Morskie Oko, Kościeliska, Ojców & all mountain trails. Light trainers for city days.</div>
+      </div>
+      <div class="tc">
+        <div class="tc-icon">🏔️</div>
+        <div class="tc-title">Tatra National Park Fee</div>
+        <div class="tc-text">Small entry fee at <a href="https://www.tpn.pl/en" target="_blank" rel="noopener">Tatra National Park</a> gates — cash or card. Worth every grosz for the stunning scenery.</div>
+      </div>
+      <div class="tc">
+        <div class="tc-icon">🛏️</div>
+        <div class="tc-title">Two-Family Rooms</div>
+        <div class="tc-text">Request <strong>connecting rooms in writing</strong> directly with hotels. Or rent a large apartment sleeping 6–8 — shared kitchen, more space, 30–40% cheaper.</div>
+      </div>
+      <div class="tc">
+        <div class="tc-icon">🗺️</div>
+        <div class="tc-title">Useful Apps</div>
+        <div class="tc-text">
+          <a href="https://maps.google.com" target="_blank" rel="noopener">Google Maps</a> (download Poland offline) ·
+          <a href="https://www.waze.com" target="_blank" rel="noopener">Waze</a> for mountain roads ·
+          <a href="https://www.alltrails.com" target="_blank" rel="noopener">AllTrails</a> for Tatra & Beskid hiking routes
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- ─── PACKING ─── -->
+<section id="packing">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-tag">🎒 Gear Up</span>
+      <h2 class="sec-title">Packing Recommendations</h2>
+      <p class="sec-desc">What to pack for a mountain-focused family adventure in summer Poland.</p>
+    </div>
+    <div class="packing-grid">
+      <div class="pack-card">
+        <div class="pack-title">🥾 Footwear & Clothing</div>
+        <ul class="pack-list">
+          <li>Hiking shoes for everyone (waterproof recommended)</li>
+          <li>Light rain jackets for the whole family</li>
+          <li>Fleece or warm layer for mountain mornings</li>
+          <li>Comfortable trainers for city days</li>
+          <li>Swimwear (multiple sets — for Chochołowskie Termy day)</li>
+          <li>Sun hats and UV protection shirts</li>
+        </ul>
+      </div>
+      <div class="pack-card">
+        <div class="pack-title">🎒 Backpacks & Gear</div>
+        <ul class="pack-list">
+          <li>Day pack per adult for hikes (20–30L)</li>
+          <li>Trekking poles (optional but great for parents)</li>
+          <li>Sunscreen SPF 50+ for mountain UV</li>
+          <li>Insect repellent for forest trails</li>
+          <li>Reusable water bottles (2 per person)</li>
+          <li>Snacks & energy bars for long hikes</li>
+        </ul>
+      </div>
+      <div class="pack-card">
+        <div class="pack-title">💊 Health & Safety</div>
+        <ul class="pack-list">
+          <li>Basic first aid kit (plasters, antiseptic)</li>
+          <li>Blister prevention patches & foot cream</li>
+          <li>Kids' pain relief (ibuprofen/paracetamol)</li>
+          <li>Motion sickness tablets (winding mountain roads)</li>
+          <li>European Health Insurance Card (EHIC)</li>
+          <li>Travel insurance for mountain activities</li>
+        </ul>
+      </div>
+      <div class="pack-card">
+        <div class="pack-title">📱 Tech & Documents</div>
+        <ul class="pack-list">
+          <li>Passport & travel insurance docs</li>
+          <li>International driving license</li>
+          <li>Offline maps downloaded (Poland)</li>
+          <li>Power bank for long days out</li>
+          <li>Camera / action cam for alpine coasters</li>
+          <li>Universal EU plug adapters</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
 <footer>
   <div class="container">
     <div class="footer-flag">🇵🇱</div>
     <div class="footer-title">Poland Family Adventure 2026</div>
-    <p>Star Route from Kraków · July 14–25 · 2 Families · 11 Days</p>
-    <p style="margin-top:0.5rem">🏰 Castles &amp; Eagle's Nests &nbsp;·&nbsp; 🏔️ Tatra Mountains &nbsp;·&nbsp; 🌊 Morskie Oko &nbsp;·&nbsp; 🚣 Dunajec Rafting &nbsp;·&nbsp; ⛏️ Wieliczka Salt Mine</p>
-    <div class="footer-note">Hotel prices are peak-season estimates for July 2026. Verify availability and book early. All attraction links go to official or partner sites.</div>
+    <p>Kraków · Zakopane · Szczyrk · July 14–25 · 2 Families · 4 Kids</p>
+    <p style="margin-top:0.5rem">
+      ⛏️ Wieliczka Salt Mine &nbsp;·&nbsp; 🏔️ Tatra Mountains &nbsp;·&nbsp;
+      🌊 Morskie Oko &nbsp;·&nbsp; 🎢 Alpine Coasters &nbsp;·&nbsp; 🌡️ Thermal Pools
+    </p>
+    <div class="footer-note">Hotel prices are peak-season estimates for July 2026. Verify availability and book early. All attraction links go to official websites. Waze links open in the Waze app.</div>
   </div>
 </footer>
 
 <script>
+  // Animate cards into view
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 70);
+        setTimeout(() => { entry.target.classList.add('visible'); }, i * 70);
         observer.unobserve(entry.target);
       }
     });
   }, { threshold: 0.08 });
   document.querySelectorAll('.dc, .hc').forEach(el => observer.observe(el));
 
+  // Nav shadow on scroll
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
     nav.style.boxShadow = window.scrollY > 50 ? '0 2px 24px rgba(0,0,0,0.35)' : 'none';
+  });
+
+  // Mobile menu toggle
+  document.getElementById('burger').addEventListener('click', () => {
+    document.getElementById('navLinks').classList.toggle('open');
   });
 </script>
 </body>
