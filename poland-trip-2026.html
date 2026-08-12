@@ -157,7 +157,7 @@ body.en .tip { border-right: none; border-left: 4px solid var(--gold); }
   font-size: 0.8em; font-weight: bold; text-decoration: none; transition: opacity 0.2s;
 }
 .btn:hover { opacity: 0.8; }
-.btn-waze { background: #33ccff; color: #000; }
+.btn-gmaps { background: #4285F4; color: #fff; }
 .btn-maps { background: #4285f4; color: #fff; }
 .btn-web  { background: var(--green); color: #fff; }
 .btn-book { background: var(--gold); color: #fff; }
@@ -189,8 +189,8 @@ body.en .tip { border-right: none; border-left: 4px solid var(--gold); }
 
 
 /* WAZE INLINE LINKS */
-.waze-link { color: inherit; text-decoration: underline; text-decoration-style: dotted; text-decoration-color: #33ccff; }
-.waze-link:hover { color: #33ccff !important; }
+.waze-link { color: inherit; text-decoration: underline; text-decoration-style: dotted; text-decoration-color: #4285F4; }
+.waze-link:hover { color: #4285F4 !important; }
 /* FLIGHT BOX */
 .flight-box {
   background: linear-gradient(135deg, #1a1a2e, #16213e);
@@ -277,6 +277,9 @@ footer { background: var(--navy); color: #aaa; text-align: center; padding: 22px
   </a>
   <a href="#" onclick="show('hotels',this)">
     <span data-he>🏨 מלונות</span><span data-en>🏨 Hotels</span>
+  </a>
+  <a href="#" onclick="show('cars',this)">
+    <span data-he>🚗 רכב</span><span data-en>🚗 Cars</span>
   </a>
   <a href="#" onclick="show('wisla',this)">
     <span data-he>🏔 ויסלה</span><span data-en>🏔 Wisła</span>
@@ -365,26 +368,26 @@ footer { background: var(--navy); color: #aaa; text-align: center; padding: 22px
     <div class="hotel-card">
       <h3>Aries Hotel &amp; SPA Wisła</h3>
       <div class="stars">⭐⭐⭐⭐⭐</div>
-      <p>📍 ul. Czarne 3, Wisła · Waze: "Aries Hotel SPA Wisła"</p>
+      <p>📍 ul. Czarne 3, Wisła · Maps: "Aries Hotel SPA Wisła"</p>
       <p><span data-he>ציון 9.5</span><span data-en>Rating 9.5</span></p>
       <p>🏊 <span data-he>בריכה פנים</span><span data-en>Indoor pool</span> &nbsp;♨️ <span data-he>ג'קוזי חיצוני</span><span data-en>Outdoor jacuzzi</span></p>
       <p>💆 <span data-he>ספא + סאונה</span><span data-en>Spa + sauna</span> &nbsp;📍 <span data-he>3 ק"מ ממרכז</span><span data-en>3 km from center</span></p>
       <div style="margin-top:10px; display:flex; gap:8px; flex-wrap:wrap;">
-        <a href="https://waze.com/ul?q=Aries+Hotel+SPA+Wisla&navigate=yes" target="_blank" class="btn btn-waze">🚗 Waze</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Aries+Hotel+SPA+Wisla" target="_blank" class="btn btn-gmaps">🗺️ Google Maps</a>
         <a href="https://www.booking.com/hotel/pl/aries-wisla.html" target="_blank" class="btn btn-book">📅 Booking</a>
       </div>
     </div>
     <div class="hotel-card">
       <h3>Novotel Kraków Centrum</h3>
       <div class="stars">⭐⭐⭐⭐</div>
-      <p>📍 ul. Kościuszki 5, Kraków · Waze: "Novotel Krakow Centrum"</p>
+      <p>📍 ul. Kościuszki 5, Kraków · Maps: "Novotel Krakow Centrum"</p>
       <p>📞 +48 12 299 29 00</p>
       <p><span data-he>צ'ק-אין: 16:00 · צ'ק-אאוט: 12:00</span><span data-en>Check-in: 16:00 · Check-out: 12:00</span></p>
       <p>🛏 <span data-he>2 חדרים · 4 מבוגרים + 4 ילדים</span><span data-en>2 rooms · 4 adults + 4 children</span></p>
       <p>👤 <span data-he>על שם: Gil Pal · אישור: QLGPCWXJ</span><span data-en>Guest: Gil Pal · Reservation: QLGPCWXJ</span></p>
       <p>📅 <span data-he>19–23 אוגוסט 2026 · 4 לילות</span><span data-en>Aug 19–23, 2026 · 4 nights</span></p>
       <div style="margin-top:10px; display:flex; gap:8px; flex-wrap:wrap;">
-        <a href="https://waze.com/ul?q=Novotel+Krakow+Centrum&navigate=yes" target="_blank" class="btn btn-waze">🚗 Waze</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Novotel+Krakow+Centrum" target="_blank" class="btn btn-gmaps">🗺️ Google Maps</a>
         <a href="https://www.accorhotels.com/gb/hotel-3033-novotel-krakow-centrum/index.shtml" target="_blank" class="btn btn-book">🏨 Accor</a>
       </div>
     </div>
@@ -418,6 +421,187 @@ footer { background: var(--navy); color: #aaa; text-align: center; padding: 22px
   </div>
 </div>
 
+<!-- ========== CARS ========== -->
+<div id="cars" class="section">
+
+  <div class="phase-header">
+    <div>
+      <h2><span data-he>🚗 השכרת רכבים — Avis · קרקוב שדה תעופה</span><span data-en>🚗 Car Rental — Avis · Kraków Airport</span></h2>
+    </div>
+  </div>
+
+  <!-- AVIS VOUCHER CARD -->
+  <div class="day-card" style="margin-bottom:20px;">
+    <div class="day-head" style="cursor:default;">
+      <div style="font-size:1.4em;">🚙</div>
+      <div class="day-title">
+        <span data-he>רכב 1 — Zeev Cohen · Avis KIA Sportage</span>
+        <span data-en>Car 1 — Zeev Cohen · Avis KIA Sportage</span>
+      </div>
+      <div><span class="day-date-tag">13–19/8</span></div>
+      <div class="day-icons">🔑</div>
+    </div>
+    <div class="day-body">
+
+      <!-- VOUCHER DETAILS -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:16px;">
+        <div class="transport-card">
+          <h4>📋 <span data-he>פרטי השכרה</span><span data-en>Rental Details</span></h4>
+          <table>
+            <tr><td><span data-he>מספר ווצ'ר</span><span data-en>Voucher No</span></td><td><strong>2235390</strong></td></tr>
+            <tr><td><span data-he>אישור</span><span data-en>Reservation</span></td><td><strong>22976771IL6</strong></td></tr>
+            <tr><td><span data-he>שם</span><span data-en>Name</span></td><td>COHEN ZEEV</td></tr>
+            <tr><td><span data-he>חשבון Avis</span><span data-en>Avis Account</span></td><td>AV860090020006</td></tr>
+            <tr><td><span data-he>AAN</span><span data-en>AAN</span></td><td>0030984N</td></tr>
+            <tr><td><span data-he>טיסה</span><span data-en>Flight</span></td><td>W6 2098</td></tr>
+            <tr><td><span data-he>ימים</span><span data-en>Days</span></td><td>6 <span data-he>ימים</span><span data-en>days</span></td></tr>
+          </table>
+        </div>
+        <div class="transport-card">
+          <h4>🚙 <span data-he>סוג הרכב</span><span data-en>Car Type</span></h4>
+          <table>
+            <tr><td><span data-he>קבוצה</span><span data-en>Group</span></td><td>MJ</td></tr>
+            <tr><td><span data-he>דגם</span><span data-en>Model</span></td><td><strong>KIA Sportage</strong></td></tr>
+            <tr><td><span data-he>תיבת הילוכים</span><span data-en>Transmission</span></td><td><span data-he>אוטומטי</span><span data-en>Automatic</span></td></tr>
+            <tr><td><span data-he>מיזוג</span><span data-en>A/C</span></td><td>✅</td></tr>
+            <tr><td><span data-he>דלתות</span><span data-en>Doors</span></td><td>4</td></tr>
+            <tr><td><span data-he>מקומות</span><span data-en>Seats</span></td><td>5</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- PICKUP & RETURN -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:16px;">
+        <div class="transport-card" style="border-color:var(--green);">
+          <h4>🟢 <span data-he>איסוף רכב</span><span data-en>Car Pick-Up</span></h4>
+          <table>
+            <tr><td><span data-he>תאריך</span><span data-en>Date</span></td><td><strong>13/08/2026</strong></td></tr>
+            <tr><td><span data-he>שעה</span><span data-en>Time</span></td><td><strong>15:00</strong></td></tr>
+            <tr><td><span data-he>מיקום</span><span data-en>Location</span></td><td>Kraków Airport</td></tr>
+            <tr><td><span data-he>כניסה</span><span data-en>Terminal</span></td><td><span data-he>טרמינל 1 — אולם הגעות</span><span data-en>Terminal 1 — Arrivals Hall</span></td></tr>
+            <tr><td><span data-he>טלפון</span><span data-en>Phone</span></td><td>+48 221 139 153</td></tr>
+          </table>
+        </div>
+        <div class="transport-card" style="border-color:var(--red);">
+          <h4>🔴 <span data-he>החזרת רכב</span><span data-en>Car Return</span></h4>
+          <table>
+            <tr><td><span data-he>תאריך</span><span data-en>Date</span></td><td><strong>19/08/2026</strong></td></tr>
+            <tr><td><span data-he>שעה</span><span data-en>Time</span></td><td><strong>15:00</strong></td></tr>
+            <tr><td><span data-he>מיקום</span><span data-en>Location</span></td><td>Kraków Airport</td></tr>
+            <tr><td><span data-he>כניסה</span><span data-en>Terminal</span></td><td><span data-he>טרמינל 1 — אולם הגעות</span><span data-en>Terminal 1 — Arrivals Hall</span></td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- MAPS & LINKS -->
+      <div class="waze-row">
+        <strong>📍</strong>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Avis+Krakow+Airport+Terminal+1+Kapitana+Medweckiego+1" target="_blank" class="btn btn-gmaps" style="font-size:0.8em;padding:4px 10px;">🗺️ Avis — Kraków Airport</a>
+        <a href="tel:+48221139153" class="btn btn-web" style="font-size:0.8em;padding:4px 10px;">📞 +48 221 139 153</a>
+      </div>
+
+      <!-- OPENING HOURS -->
+      <div class="tip green" style="margin-top:10px;">
+        <span data-he>🕐 <strong>שעות פעילות Avis קרקוב:</strong> ב׳: 06:45–23:59 · ג׳-ד׳,ו׳: 08:00–22:30 · ה׳: 06:45–22:30 · ש׳: 09:00–17:00 · א׳: 09:00–23:59</span>
+        <span data-en>🕐 <strong>Avis Kraków hours:</strong> Mon: 06:45–23:59 · Tue-Wed,Fri: 08:00–22:30 · Thu: 06:45–22:30 · Sat: 09:00–17:00 · Sun: 09:00–23:59</span>
+      </div>
+
+      <!-- INSURANCE INCLUDED -->
+      <div class="tip" style="margin-top:8px;">
+        <span data-he>✅ <strong>כלול בהשכרה:</strong> Super Theft Protection · Collision Damage Waiver (CDW) · Super CDW · Airport Fee · Local Tax · Unlimited Mileage · Registration Fee</span>
+        <span data-en>✅ <strong>Included:</strong> Super Theft Protection · Collision Damage Waiver (CDW) · Super CDW · Airport Fee · Local Tax · Unlimited Mileage · Registration Fee</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CAR 2 — GIL PAL -->
+  <div class="day-card" style="margin-bottom:20px;">
+    <div class="day-head" style="cursor:default;">
+      <div style="font-size:1.4em;">🚙</div>
+      <div class="day-title">
+        <span data-he>רכב 2 — Gil Pal · Avis KIA Sportage</span>
+        <span data-en>Car 2 — Gil Pal · Avis KIA Sportage</span>
+      </div>
+      <div><span class="day-date-tag">13–19/8</span></div>
+      <div class="day-icons">🔑</div>
+    </div>
+    <div class="day-body">
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:16px;">
+        <div class="transport-card">
+          <h4>📋 <span data-he>פרטי השכרה</span><span data-en>Rental Details</span></h4>
+          <table>
+            <tr><td><span data-he>מספר ווצ'ר</span><span data-en>Voucher No</span></td><td><strong>2235391</strong></td></tr>
+            <tr><td><span data-he>אישור</span><span data-en>Reservation</span></td><td><strong>22976798IL5</strong></td></tr>
+            <tr><td><span data-he>שם</span><span data-en>Name</span></td><td>PAL GIL</td></tr>
+            <tr><td><span data-he>חשבון Avis</span><span data-en>Avis Account</span></td><td>AV860090020006</td></tr>
+            <tr><td><span data-he>AAN</span><span data-en>AAN</span></td><td>0030984N</td></tr>
+            <tr><td><span data-he>טיסה</span><span data-en>Flight</span></td><td>W6 2098</td></tr>
+            <tr><td><span data-he>ימים</span><span data-en>Days</span></td><td>6 <span data-he>ימים</span><span data-en>days</span></td></tr>
+          </table>
+        </div>
+        <div class="transport-card">
+          <h4>🚙 <span data-he>סוג הרכב</span><span data-en>Car Type</span></h4>
+          <table>
+            <tr><td><span data-he>קבוצה</span><span data-en>Group</span></td><td>MJ</td></tr>
+            <tr><td><span data-he>דגם</span><span data-en>Model</span></td><td><strong>KIA Sportage</strong></td></tr>
+            <tr><td><span data-he>תיבת הילוכים</span><span data-en>Transmission</span></td><td><span data-he>אוטומטי</span><span data-en>Automatic</span></td></tr>
+            <tr><td><span data-he>מיזוג</span><span data-en>A/C</span></td><td>✅</td></tr>
+            <tr><td><span data-he>דלתות</span><span data-en>Doors</span></td><td>4</td></tr>
+            <tr><td><span data-he>מקומות</span><span data-en>Seats</span></td><td>5</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:16px;">
+        <div class="transport-card" style="border-color:var(--green);">
+          <h4>🟢 <span data-he>איסוף רכב</span><span data-en>Car Pick-Up</span></h4>
+          <table>
+            <tr><td><span data-he>תאריך</span><span data-en>Date</span></td><td><strong>13/08/2026</strong></td></tr>
+            <tr><td><span data-he>שעה</span><span data-en>Time</span></td><td><strong>15:00</strong></td></tr>
+            <tr><td><span data-he>מיקום</span><span data-en>Location</span></td><td>Kraków Airport</td></tr>
+            <tr><td><span data-he>כניסה</span><span data-en>Terminal</span></td><td><span data-he>טרמינל 1 — אולם הגעות</span><span data-en>Terminal 1 — Arrivals Hall</span></td></tr>
+            <tr><td><span data-he>טלפון</span><span data-en>Phone</span></td><td>+48 221 139 153</td></tr>
+          </table>
+        </div>
+        <div class="transport-card" style="border-color:var(--red);">
+          <h4>🔴 <span data-he>החזרת רכב</span><span data-en>Car Return</span></h4>
+          <table>
+            <tr><td><span data-he>תאריך</span><span data-en>Date</span></td><td><strong>19/08/2026</strong></td></tr>
+            <tr><td><span data-he>שעה</span><span data-en>Time</span></td><td><strong>15:00</strong></td></tr>
+            <tr><td><span data-he>מיקום</span><span data-en>Location</span></td><td>Kraków Airport</td></tr>
+            <tr><td><span data-he>כניסה</span><span data-en>Terminal</span></td><td><span data-he>טרמינל 1 — אולם הגעות</span><span data-en>Terminal 1 — Arrivals Hall</span></td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="waze-row">
+        <strong>📍</strong>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Avis+Krakow+Airport+Terminal+1+Kapitana+Medweckiego+1" target="_blank" class="btn btn-gmaps" style="font-size:0.8em;padding:4px 10px;">🗺️ Avis — Kraków Airport</a>
+        <a href="tel:+48221139153" class="btn btn-web" style="font-size:0.8em;padding:4px 10px;">📞 +48 221 139 153</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TIPS BOX -->
+  <div class="phase-header" style="margin-top:20px;">
+    <div><h2><span data-he>💡 טיפים לנסיעה עם רכב שכור בפולין</span><span data-en>💡 Driving Tips in Poland</span></h2></div>
+  </div>
+  <div style="background:var(--card); border-radius:12px; padding:18px; box-shadow:0 2px 14px rgba(0,0,0,0.08);">
+    <div class="checklist">
+      <label><input type="checkbox"> <span><span data-he>📸 <strong>צלם את הרכב מכל הצדדים</strong> לפני היציאה מהחניון — כולל גג, פגושים ותחתית</span><span data-en>📸 <strong>Photograph the car from all sides</strong> before leaving the lot — including roof, bumpers and underside</span></span></label>
+      <label><input type="checkbox"> <span><span data-he>⛽ בולטנה — דיזל או בנזין? <strong>בדוק את סוג הדלק על הווצ'ר ועל כיסוי הדלק</strong> לפני המילוי</span><span data-en>⛽ Check fuel type — diesel or petrol? <strong>Verify fuel type on voucher and fuel cap</strong> before filling up</span></span></label>
+      <label><input type="checkbox"> <span><span data-he>🛣️ <strong>מהירות מותרת בפולין:</strong> עיר 50 · כביש ראשי 90 · כביש מהיר 120–140 · מהירות 0 כשיש ילדים עם אוזניות 😄</span><span data-en>🛣️ <strong>Speed limits in Poland:</strong> City 50 · Main road 90 · Motorway 120–140 km/h</span></span></label>
+      <label><input type="checkbox"> <span><span data-he>📱 <strong>הורד Google Maps offline לפולין</strong> — כיסוי נייד בהרים עשוי להיות גרוע</span><span data-en>📱 <strong>Download Google Maps offline for Poland</strong> — mobile coverage in mountains can be poor</span></span></label>
+      <label><input type="checkbox"> <span><span data-he>🅿️ <strong>חניה בויסלה:</strong> בחינם ליד Aries · בקרקוב: Novotel מציע חניה (~60 PLN/יום)</span><span data-en>🅿️ <strong>Parking:</strong> Free at Aries Wisła · In Kraków: Novotel offers parking (~60 PLN/day)</span></span></label>
+      <label><input type="checkbox"> <span><span data-he>🆘 <strong>Avis חירום:</strong> +48 221 139 153 · <strong>משטרה פולין:</strong> 997 · <strong>חירום כללי:</strong> 112</span><span data-en>🆘 <strong>Avis Emergency:</strong> +48 221 139 153 · <strong>Polish Police:</strong> 997 · <strong>General Emergency:</strong> 112</span></span></label>
+    </div>
+  </div>
+
+</div><!-- /cars -->
+
 <!-- ========== WISŁA ========== -->
 <div id="wisla" class="section">
 
@@ -442,7 +626,7 @@ footer { background: var(--navy); color: #aaa; text-align: center; padding: 22px
       <div class="weather-badge">🌤️ <span data-he>מקסימום 22°C · לילה 12°C · עננות ~40%</span><span data-en>High 22°C · Night 12°C · Cloud cover ~40%</span></div>
       <div class="clothing-tip">👕 <span data-he>בגדי נסיעה נוחים · ז'קט קל לערב (12°C בלילה)</span><span data-en>Comfortable travel clothes · light jacket for evening (12°C)</span></div>
       <div class="waze-row">
-        <strong>📍 Waze:</strong> "Aries Hotel SPA Wisła" / "Wisła Czarne 3"
+        <strong>📍</strong> <a href="https://www.google.com/maps/dir/?api=1&destination=Aries+Hotel+SPA+Wisla" target="_blank" class="btn btn-gmaps" style="font-size:0.8em;padding:4px 10px;">🚗 Aries Hotel SPA Wisła</a>
       </div>
       <div class="route-info">
         <span data-he>נמל קרקוב → Aries Hotel · ~130 ק"מ · ~2:15 שעות · A4 מערבה → S52 דרומה → DK941 לויסלה</span>
@@ -477,7 +661,7 @@ footer { background: var(--navy); color: #aaa; text-align: center; padding: 22px
       <div class="weather-badge">🌤️ <span data-he>מקסימום 20°C · לילה 12°C · עננות ~42%</span><span data-en>High 20°C · Night 12°C · Cloud cover ~42%</span></div>
       <div class="clothing-tip">🧥 <span data-he>שכבות! קר בפסגה · בגדי ספורט + נעליים סגורות + ז'קט קל</span><span data-en>Layer up! Cold at summit · sportswear + closed shoes + light jacket</span></div>
       <div class="waze-row">
-        <strong>📍 Waze:</strong> "Kolej Linowa Czantoria Ustroń"
+        <strong>📍</strong> <a href="https://www.google.com/maps/dir/?api=1&destination=Kolej+Linowa+Czantoria+Ustron" target="_blank" class="btn btn-gmaps" style="font-size:0.8em;padding:4px 10px;">🚗 Kolej Linowa Czantoria</a>
       </div>
       <div class="route-info">
         <span data-he>Aries Hotel → גונדולת Czantoria · ~21 ק"מ · ~25 דקות (DK941 צפונה → DK81 לאוסטרון)</span>
@@ -486,9 +670,9 @@ footer { background: var(--navy); color: #aaa; text-align: center; padding: 22px
       <table class="schedule">
         <tr><td>09:00</td><td><span data-he>🚡 גונדולת Czantoria (995 מ') — 6 דקות עלייה · גבול פולין-צ'כיה · נוף פנורמי</span><span data-en>🚡 Czantoria gondola (995m) — 6-min ride · Poland–Czech border · panoramic views</span></td></tr>
         <tr><td>10:00</td><td><span data-he>🎿 מגלשת קיץ אלפינית 700 מ' — עם בלמים ידניים, ילדים אוהבים לעשות כמה סיבובים</span><span data-en>🎿 700m summer alpine slide — with hand brakes, kids always want to go again</span></td></tr>
-        <tr><td>11:00</td><td><span data-he>👁 מגדל תצפית + <a href="https://waze.com/ul?q=Sokolnia+Czantoria+Ustron&navigate=yes" target="_blank" class="waze-link">Sokolnia</a> — הפגנת נשרים חיים (~15 דקות)</span><span data-en>👁 Viewpoint tower + <a href="https://waze.com/ul?q=Sokolnia+Czantoria+Ustron&navigate=yes" target="_blank" class="waze-link">Sokolnia</a> — live eagle &amp; hawk show (~15 min)</span></td></tr>
-        <tr><td>12:00</td><td><span data-he>⬇️ ירידה בגונדולה + ארוחת צהריים באוסטרון</span><span data-en>⬇️ Gondola down + lunch in <a href="https://waze.com/ul?q=Ustron+centrum&navigate=yes" target="_blank" class="waze-link">Ustroń</a></span></td></tr>
-        <tr><td>14:00</td><td><span data-he>☕ זמן חופשי / מנוחה / קפה ב-<a href="https://waze.com/ul?q=Ustron+centrum&navigate=yes" target="_blank" class="waze-link">אוסטרון</a></span><span data-en>☕ Free time / rest / coffee in <a href="https://waze.com/ul?q=Ustron+centrum&navigate=yes" target="_blank" class="waze-link">Ustroń</a></span></td></tr>
+        <tr><td>11:00</td><td><span data-he>👁 מגדל תצפית + <a href="https://www.google.com/maps/dir/?api=1&destination=Sokolnia+Czantoria+Ustron" target="_blank" class="waze-link">Sokolnia</a> — הפגנת נשרים חיים (~15 דקות)</span><span data-en>👁 Viewpoint tower + <a href="https://www.google.com/maps/dir/?api=1&destination=Sokolnia+Czantoria+Ustron" target="_blank" class="waze-link">Sokolnia</a> — live eagle &amp; hawk show (~15 min)</span></td></tr>
+        <tr><td>12:00</td><td><span data-he>⬇️ ירידה בגונדולה + ארוחת צהריים ב-<a href="https://www.google.com/maps/dir/?api=1&destination=Ustron+centrum" target="_blank" class="waze-link">אוסטרון</a></span><span data-en>⬇️ Gondola down + lunch in <a href="https://www.google.com/maps/dir/?api=1&destination=Ustron+centrum" target="_blank" class="waze-link">Ustroń</a></span></td></tr>
+        <tr><td>14:00</td><td><span data-he>☕ זמן חופשי / מנוחה / קפה ב-<a href="https://www.google.com/maps/dir/?api=1&destination=Ustron+centrum" target="_blank" class="waze-link">אוסטרון</a></span><span data-en>☕ Free time / rest / coffee in <a href="https://www.google.com/maps/dir/?api=1&destination=Ustron+centrum" target="_blank" class="waze-link">Ustroń</a></span></td></tr>
         <tr><td>16:30</td><td><span data-he>🚗 חזרה ל-Aries Hotel (~21 ק"מ · ~25 דקות)</span><span data-en>🚗 Return to Aries Hotel (~21 km · ~25 min)</span></td></tr>
         <tr><td>18:30</td><td><span data-he>♨️ ספא / בריכה / ג'קוזי Aries + ארוחת ערב</span><span data-en>♨️ Aries spa / pool / jacuzzi + dinner</span></td></tr>
       </table>
@@ -514,7 +698,7 @@ footer { background: var(--navy); color: #aaa; text-align: center; padding: 22px
       <div class="weather-badge">⛅ <span data-he>מקסימום 20°C · לילה 12°C · עננות ~43%</span><span data-en>High 20°C · Night 12°C · Cloud cover ~43%</span></div>
       <div class="clothing-tip">👟 <span data-he>נעליים סגורות חובה בפארק חבלים! בגדי ספורט + ז'קט קל + לא נעלי ספורט חלקות</span><span data-en>Closed shoes mandatory for rope park! Sportswear + light jacket · no flat-soled sneakers</span></div>
       <div class="waze-row">
-        <strong>📍 Waze:</strong> "Równica Park Linowy Ustroń"
+        <strong>📍</strong> <a href="https://www.google.com/maps/dir/?api=1&destination=Rownica+Park+Linowy+Ustron" target="_blank" class="btn btn-gmaps" style="font-size:0.8em;padding:4px 10px;">🚗 Równica Park Linowy</a>
       </div>
       <div class="route-info">
         <span data-he>Aries Hotel → Równica · ~18 ק"מ · ~22 דקות (DK941 → DK81)</span>
@@ -522,7 +706,7 @@ footer { background: var(--navy); color: #aaa; text-align: center; padding: 22px
       </div>
       <table class="schedule">
         <tr><td>09:00</td><td><span data-he>🚗 יציאה ל-Równica</span><span data-en>🚗 Depart to Równica</span></td></tr>
-        <tr><td>09:30</td><td><span data-he>🌲 <a href="https://waze.com/ul?q=Rownica+Park+Linowy+Ustron&navigate=yes" target="_blank" class="waze-link"><strong>Równica</strong></a> (884 מ') — פארק חבלים: 6 מסלולי קושי לגיל 3–16 + מגלשת אלפינית על מסילה</span><span data-en>🌲 <a href="https://waze.com/ul?q=Rownica+Park+Linowy+Ustron&navigate=yes" target="_blank" class="waze-link"><strong>Równica</strong></a> (884m) — rope park: 6 difficulty levels (age 3–16) + alpine rail slide</span></td></tr>
+        <tr><td>09:30</td><td><span data-he>🌲 <a href="https://www.google.com/maps/dir/?api=1&destination=Rownica+Park+Linowy+Ustron" target="_blank" class="waze-link"><strong>Równica</strong></a> (884 מ') — פארק חבלים: 6 מסלולי קושי לגיל 3–16 + מגלשת אלפינית על מסילה</span><span data-en>🌲 <a href="https://www.google.com/maps/dir/?api=1&destination=Rownica+Park+Linowy+Ustron" target="_blank" class="waze-link"><strong>Równica</strong></a> (884m) — rope park: 6 difficulty levels (age 3–16) + alpine rail slide</span></td></tr>
         <tr><td>13:00</td><td><span data-he>🍽️ ארוחת צהריים באוסטרון</span><span data-en>🍽️ Lunch in Ustroń</span></td></tr>
         <tr><td>15:00</td><td><span data-he>☕ טיול קצר + קפה בעיירה</span><span data-en>☕ Short walk + coffee in town</span></td></tr>
         <tr><td>16:30</td><td><span data-he>🚗 חזרה ל-Aries (~18 ק"מ · ~22 דקות · DK81 → DK941)</span><span data-en>🚗 Return to Aries (~18 km · ~22 min · DK81 → DK941)</span></td></tr>
@@ -550,14 +734,14 @@ footer { background: var(--navy); color: #aaa; text-align: center; padding: 22px
       <div class="weather-badge">⛅ <span data-he>מקסימום 21°C · לילה 13°C · עננות ~44%</span><span data-en>High 21°C · Night 13°C · Cloud cover ~44%</span></div>
       <div class="clothing-tip">🩱 <span data-he>בגד ים + נעלי בריכה + מגבות · בגדים קלים לחזרה למלון</span><span data-en>Swimsuit + pool shoes + towels · light clothes for the ride back</span></div>
       <div class="waze-row">
-        <strong>📍 Waze:</strong> "Aquapark Tropikana Hotel Gołębiewski Wisła"
+        <strong>📍</strong> <a href="https://www.google.com/maps/dir/?api=1&destination=Aquapark+Tropikana+Hotel+Golebiewski+Wisla" target="_blank" class="btn btn-gmaps" style="font-size:0.8em;padding:4px 10px;">🚗 Aquapark Tropikana</a>
       </div>
       <div class="route-info">
         <span data-he>Aries Hotel → Tropikana · ~4 ק"מ · ~6 דקות (DK941 צפונה)</span>
         <span data-en>Aries Hotel → Tropikana · ~4 km · ~6 min (DK941 north)</span>
       </div>
       <table class="schedule">
-        <tr><td>09:30</td><td><span data-he>🌊 <a href="https://waze.com/ul?q=Aquapark+Tropikana+Hotel+Golebiewski+Wisla&navigate=yes" target="_blank" class="waze-link">Tropikana</a> — פתוח 08:00–21:00 · פתוח לכולם (לא רק אורחי המלון)</span><span data-en>🌊 <a href="https://waze.com/ul?q=Aquapark+Tropikana+Hotel+Golebiewski+Wisla&navigate=yes" target="_blank" class="waze-link">Tropikana</a> — open 08:00–21:00 · open to all (not only hotel guests)</span></td></tr>
+        <tr><td>09:30</td><td><span data-he>🌊 <a href="https://www.google.com/maps/dir/?api=1&destination=Aquapark+Tropikana+Hotel+Golebiewski+Wisla" target="_blank" class="waze-link">Tropikana</a> — פתוח 08:00–21:00 · פתוח לכולם (לא רק אורחי המלון)</span><span data-en>🌊 <a href="https://www.google.com/maps/dir/?api=1&destination=Aquapark+Tropikana+Hotel+Golebiewski+Wisla" target="_blank" class="waze-link">Tropikana</a> — open 08:00–21:00 · open to all (not only hotel guests)</span></td></tr>
         <tr><td>09:30–17:00</td><td>
           <span data-he>בריכת 25 מ' · בריכת גלים · ג'קוזי חיצוני עם נוף לסקי-ג'אמפ · מגלשות מים · זרם נהרון · סאונה פינית + ערבית · ברודזיק 36°C</span>
           <span data-en>25m pool · wave pool · outdoor jacuzzi with ski-jump views · water slides · lazy river · Finnish + steam sauna · toddler pool 36°C</span>
@@ -587,7 +771,7 @@ footer { background: var(--navy); color: #aaa; text-align: center; padding: 22px
       <div class="weather-badge">🌤️ <span data-he>מקסימום 21°C · לילה 12°C · עננות ~44%</span><span data-en>High 21°C · Night 12°C · Cloud cover ~44%</span></div>
       <div class="clothing-tip">🥾 <span data-he>נעלי הליכה + ז'קט גשם קל (44% עננות) + שכבות · ייתכן רטיבות ליד המפלים</span><span data-en>Hiking shoes + light rain jacket (44% clouds) + layers · expect splash near waterfalls</span></div>
       <div class="waze-row">
-        <strong>📍 Waze:</strong> "Dolina Białej Wisełki parking" / "OSP Wisła Czarne"
+        <strong>📍</strong> <a href="https://www.google.com/maps/dir/?api=1&destination=Dolina+Bialej+Wiselki+Wisla" target="_blank" class="btn btn-gmaps" style="font-size:0.8em;padding:4px 10px;">🚗 Dolina Białej Wisełki (חניה)</a>
       </div>
       <div class="route-info">
         <span data-he>Aries Hotel → חניית Wisła Czarne · ~2 ק"מ · ~4 דקות (ul. Czarne דרומה)</span>
@@ -595,12 +779,12 @@ footer { background: var(--navy); color: #aaa; text-align: center; padding: 22px
       </div>
       <table class="schedule">
         <tr><td>09:00</td><td><span data-he>🅿️ חניה ליד OSP Wisła Czarne (10 זלוטי/יום)</span><span data-en>🅿️ Park at OSP Wisła Czarne (10 PLN/day)</span></td></tr>
-        <tr><td>09:15</td><td><span data-he>💧 <a href="https://waze.com/ul?q=Kaskady+Rodla+Wisla&navigate=yes" target="_blank" class="waze-link"><strong>Kaskady Rodła</strong></a> — שביל אספלטי · 25 מפלים עד 5 מ' · ~3 ק"מ</span><span data-en>💧 <a href="https://waze.com/ul?q=Kaskady+Rodla+Wisla&navigate=yes" target="_blank" class="waze-link"><strong>Kaskady Rodła</strong></a> — paved trail · 25 waterfalls up to 5m · ~3 km</span></td></tr>
+        <tr><td>09:15</td><td><span data-he>💧 <a href="https://www.google.com/maps/dir/?api=1&destination=Kaskady+Rodla+Wisla" target="_blank" class="waze-link"><strong>Kaskady Rodła</strong></a> — שביל אספלטי · 25 מפלים עד 5 מ' · ~3 ק"מ</span><span data-en>💧 <a href="https://www.google.com/maps/dir/?api=1&destination=Kaskady+Rodla+Wisla" target="_blank" class="waze-link"><strong>Kaskady Rodła</strong></a> — paved trail · 25 waterfalls up to 5m · ~3 km</span></td></tr>
         <tr><td>11:00</td><td><span data-he>🧺 מנוחה + פיקניק ליד המפלים</span><span data-en>🧺 Rest + picnic by the waterfalls</span></td></tr>
-        <tr><td>12:00</td><td><span data-he>🏛️ חזרה + עצירה ב-<a href="https://waze.com/ul?q=Zameczek+Wisla&navigate=yes" target="_blank" class="waze-link"><strong>Zameczek</strong></a> (ארמון נשיא על שפת אגם Czerniańskie)</span><span data-en>🏛️ Walk back + stop at <a href="https://waze.com/ul?q=Zameczek+Wisla&navigate=yes" target="_blank" class="waze-link"><strong>Zameczek</strong></a> (Presidential palace on Lake Czerniańskie)</span></td></tr>
-        <tr><td>14:00</td><td><span data-he>🍽️ ארוחת צהריים ב-<a href="https://waze.com/ul?q=Wisla+centrum&navigate=yes" target="_blank" class="waze-link">ויסלה מרכז</a> (~4 ק"מ · ~6 דקות)</span><span data-en>🍽️ Lunch in <a href="https://waze.com/ul?q=Wisla+centrum&navigate=yes" target="_blank" class="waze-link">Wisła center</a> (~4 km · ~6 min)</span></td></tr>
-        <tr><td>16:00</td><td><span data-he>🚶 <a href="https://waze.com/ul?q=Wisla+Promenada&navigate=yes" target="_blank" class="waze-link">פרומנדה ויסלה</a> + חזרה ל-Aries</span><span data-en>🚶 <a href="https://waze.com/ul?q=Wisla+Promenada&navigate=yes" target="_blank" class="waze-link">Wisła promenade</a> + back to Aries</span></td></tr>
-        <tr><td>18:00</td><td><span data-he>🍽️ ארוחת ערב ב-<a href="https://waze.com/ul?q=Wisla+centrum&navigate=yes" target="_blank" class="waze-link">ויסלה מרכז</a> / מסעדת Aries</span><span data-en>🍽️ Dinner in <a href="https://waze.com/ul?q=Wisla+centrum&navigate=yes" target="_blank" class="waze-link">Wisła center</a> / Aries restaurant</span></td></tr>
+        <tr><td>12:00</td><td><span data-he>🏛️ חזרה + עצירה ב-<a href="https://www.google.com/maps/dir/?api=1&destination=Zameczek+Wisla" target="_blank" class="waze-link"><strong>Zameczek</strong></a> (ארמון נשיא על שפת אגם Czerniańskie)</span><span data-en>🏛️ Walk back + stop at <a href="https://www.google.com/maps/dir/?api=1&destination=Zameczek+Wisla" target="_blank" class="waze-link"><strong>Zameczek</strong></a> (Presidential palace on Lake Czerniańskie)</span></td></tr>
+        <tr><td>14:00</td><td><span data-he>🍽️ ארוחת צהריים ב-<a href="https://www.google.com/maps/dir/?api=1&destination=Wisla+centrum" target="_blank" class="waze-link">ויסלה מרכז</a> (~4 ק"מ · ~6 דקות)</span><span data-en>🍽️ Lunch in <a href="https://www.google.com/maps/dir/?api=1&destination=Wisla+centrum" target="_blank" class="waze-link">Wisła center</a> (~4 km · ~6 min)</span></td></tr>
+        <tr><td>16:00</td><td><span data-he>🚶 <a href="https://www.google.com/maps/dir/?api=1&destination=Wisla+Promenada" target="_blank" class="waze-link">פרומנדה ויסלה</a> + חזרה ל-Aries</span><span data-en>🚶 <a href="https://www.google.com/maps/dir/?api=1&destination=Wisla+Promenada" target="_blank" class="waze-link">Wisła promenade</a> + back to Aries</span></td></tr>
+        <tr><td>18:00</td><td><span data-he>🍽️ ארוחת ערב ב-<a href="https://www.google.com/maps/dir/?api=1&destination=Wisla+centrum" target="_blank" class="waze-link">ויסלה מרכז</a> / מסעדת Aries</span><span data-en>🍽️ Dinner in <a href="https://www.google.com/maps/dir/?api=1&destination=Wisla+centrum" target="_blank" class="waze-link">Wisła center</a> / Aries restaurant</span></td></tr>
       </table>
       <div class="tip green">
         <span data-he>✅ <strong>שביל קסקדי רודלה אספלטי לחלוטין</strong> — עגלה עוברת · מתאים לכל גיל · בואו מוקדם!</span>
@@ -624,18 +808,18 @@ footer { background: var(--navy); color: #aaa; text-align: center; padding: 22px
       <div class="weather-badge">🌤️ <span data-he>מקסימום 21°C · לילה 12°C · עננות ~45%</span><span data-en>High 21°C · Night 12°C · Cloud cover ~45%</span></div>
       <div class="clothing-tip">🧥 <span data-he>שכבות לכיסא-ליפט (קריר בפסגה!) · נעליים סגורות · ז'קט לאחר הצהריים</span><span data-en>Layers for chairlift (chilly at top!) · closed shoes · jacket for afternoon</span></div>
       <div class="waze-row">
-        <strong>📍 Waze:</strong> "Skolnity Ski Bike Park Wisła"
+        <strong>📍</strong> <a href="https://www.google.com/maps/dir/?api=1&destination=Skolnity+Ski+Bike+Park+Wisla" target="_blank" class="btn btn-gmaps" style="font-size:0.8em;padding:4px 10px;">🚗 Skolnity Ski Bike Park</a>
       </div>
       <div class="route-info">
         <span data-he>Aries Hotel → Skolnity · ~4 ק"מ · ~6 דקות (DK941 צפונה, מרכז ויסלה)</span>
         <span data-en>Aries Hotel → Skolnity · ~4 km · ~6 min (DK941 north, Wisła center)</span>
       </div>
       <table class="schedule">
-        <tr><td>09:30</td><td><span data-he>🚡 <a href="https://waze.com/ul?q=Skolnity+Ski+Bike+Park+Wisla&navigate=yes" target="_blank" class="waze-link"><strong>Skolnity</strong></a> — כיסא-ליפט 4 מקומות (800 מ') לפסגת Wierch Skolnity</span><span data-en>🚡 <a href="https://waze.com/ul?q=Skolnity+Ski+Bike+Park+Wisla&navigate=yes" target="_blank" class="waze-link"><strong>Skolnity</strong></a> — 4-seat chairlift (800m) up to Wierch Skolnity summit</span></td></tr>
-        <tr><td>10:00</td><td><span data-he>🌿 <a href="https://waze.com/ul?q=Sky+Walk+Skolnity+Wisla&navigate=yes" target="_blank" class="waze-link"><strong>Sky Walk</strong></a> — מסלול הליכה מושעה בגובה 38 מ' בין צמרות עצים · נוף פנורמי</span><span data-en>🌿 <a href="https://waze.com/ul?q=Sky+Walk+Skolnity+Wisla&navigate=yes" target="_blank" class="waze-link"><strong>Sky Walk</strong></a> — suspended walkway 38m high through tree canopy · panoramic views</span></td></tr>
-        <tr><td>11:00</td><td><span data-he>🦙 <a href="https://waze.com/ul?q=Alpaka+Skolnity+Wisla&navigate=yes" target="_blank" class="waze-link"><strong>חוות האלפקות</strong></a> — היחידה בויסלה! אלפקות + חמור Serwacy + בית עץ ענק + מגרש משחקים</span><span data-en>🦙 <a href="https://waze.com/ul?q=Alpaka+Skolnity+Wisla&navigate=yes" target="_blank" class="waze-link"><strong>Alpaca farm</strong></a> — the only one in Wisła! Alpacas + donkey Serwacy + giant treehouse + playground</span></td></tr>
+        <tr><td>09:30</td><td><span data-he>🚡 <a href="https://www.google.com/maps/dir/?api=1&destination=Skolnity+Ski+Bike+Park+Wisla" target="_blank" class="waze-link"><strong>Skolnity</strong></a> — כיסא-ליפט 4 מקומות (800 מ') לפסגת Wierch Skolnity</span><span data-en>🚡 <a href="https://www.google.com/maps/dir/?api=1&destination=Skolnity+Ski+Bike+Park+Wisla" target="_blank" class="waze-link"><strong>Skolnity</strong></a> — 4-seat chairlift (800m) up to Wierch Skolnity summit</span></td></tr>
+        <tr><td>10:00</td><td><span data-he>🌿 <a href="https://www.google.com/maps/dir/?api=1&destination=Sky+Walk+Skolnity+Wisla" target="_blank" class="waze-link"><strong>Sky Walk</strong></a> — מסלול הליכה מושעה בגובה 38 מ' בין צמרות עצים · נוף פנורמי</span><span data-en>🌿 <a href="https://www.google.com/maps/dir/?api=1&destination=Sky+Walk+Skolnity+Wisla" target="_blank" class="waze-link"><strong>Sky Walk</strong></a> — suspended walkway 38m high through tree canopy · panoramic views</span></td></tr>
+        <tr><td>11:00</td><td><span data-he>🦙 <a href="https://www.google.com/maps/dir/?api=1&destination=Alpaka+Skolnity+Wisla" target="_blank" class="waze-link"><strong>חוות האלפקות</strong></a> — היחידה בויסלה! אלפקות + חמור Serwacy + בית עץ ענק + מגרש משחקים</span><span data-en>🦙 <a href="https://www.google.com/maps/dir/?api=1&destination=Alpaka+Skolnity+Wisla" target="_blank" class="waze-link"><strong>Alpaca farm</strong></a> — the only one in Wisła! Alpacas + donkey Serwacy + giant treehouse + playground</span></td></tr>
         <tr><td>12:30</td><td><span data-he>⬇️ ירידה בכיסא-ליפט · ארוחת צהריים בויסלה מרכז</span><span data-en>⬇️ Chairlift down · lunch in Wisła center</span></td></tr>
-        <tr><td>14:00</td><td><span data-he>🌳 <a href="https://waze.com/ul?q=Park+Kopczynskiego+Wisla&navigate=yes" target="_blank" class="waze-link"><strong>Kopczyński Park</strong></a> + פרומנדה ויסלה + קניות מזכרות</span><span data-en>🌳 <a href="https://waze.com/ul?q=Park+Kopczynskiego+Wisla&navigate=yes" target="_blank" class="waze-link"><strong>Kopczyński Park</strong></a> + Wisła promenade + souvenir shopping</span></td></tr>
+        <tr><td>14:00</td><td><span data-he>🌳 <a href="https://www.google.com/maps/dir/?api=1&destination=Park+Kopczynskiego+Wisla" target="_blank" class="waze-link"><strong>Kopczyński Park</strong></a> + פרומנדה ויסלה + קניות מזכרות</span><span data-en>🌳 <a href="https://www.google.com/maps/dir/?api=1&destination=Park+Kopczynskiego+Wisla" target="_blank" class="waze-link"><strong>Kopczyński Park</strong></a> + Wisła promenade + souvenir shopping</span></td></tr>
         <tr><td>17:00</td><td><span data-he>♨️ חזרה ל-Aries · ספא + ג'קוזי + בריכה (פתוח עד 22:00)</span><span data-en>♨️ Back to Aries · spa + jacuzzi + pool (open until 22:00)</span></td></tr>
         <tr><td>19:30</td><td><span data-he>🍽️ ארוחת פרידה ממסעדת Aries</span><span data-en>🍽️ Farewell dinner at Aries restaurant</span></td></tr>
       </table>
@@ -672,7 +856,7 @@ footer { background: var(--navy); color: #aaa; text-align: center; padding: 22px
       <div class="weather-badge">☀️ <span data-he>מקסימום 24°C · לילה 13°C · עננות ~38%</span><span data-en>High 24°C · Night 13°C · Cloud cover ~38%</span></div>
       <div class="clothing-tip">👕 <span data-he>בגדים קלים לעיר + נעליים נוחות להרבה הליכה · ז'קט לערב בכיכר</span><span data-en>Light city clothes + comfy walking shoes · jacket for evening at the square</span></div>
       <div class="waze-row">
-        <strong>📍 Waze:</strong> "Novotel Krakow Centrum" / "Kościuszki 5 Kraków"
+        <strong>📍</strong> <a href="https://www.google.com/maps/dir/?api=1&destination=Novotel+Krakow+Centrum" target="_blank" class="btn btn-gmaps" style="font-size:0.8em;padding:4px 10px;">🚗 Novotel Krakow Centrum</a>
       </div>
       <div class="route-info">
         <span data-he>Aries Hotel ויסלה → Novotel קרקוב · ~130 ק"מ · ~2:00 שעות · DK941 → S52 → A4 מזרחה</span>
@@ -691,13 +875,13 @@ footer { background: var(--navy); color: #aaa; text-align: center; padding: 22px
         </td></tr>
         <tr><td>~13:30</td><td><span data-he>🚕 <strong>Bolt / Uber</strong> — חזרה מהשדה ל-Novotel (~55–70 זלוטי לרכב)</span><span data-en>🚕 <strong>Bolt / Uber</strong> — back from airport to Novotel (~55–70 PLN per ride)</span></td></tr>
         <tr><td>14:00</td><td><span data-he>😴 מנוחת צהריים קצרה</span><span data-en>😴 Short afternoon rest</span></td></tr>
-        <tr><td>16:00</td><td><span data-he>🏛️ <a href="https://waze.com/ul?q=Rynek+Glowny+Krakow&navigate=yes" target="_blank" class="waze-link"><strong>Rynek Główny</strong></a> — כיכר השוק הראשית של קרקוב</span><span data-en>🏛️ <a href="https://waze.com/ul?q=Rynek+Glowny+Krakow&navigate=yes" target="_blank" class="waze-link"><strong>Rynek Główny</strong></a> — Kraków's Main Market Square</span></td></tr>
+        <tr><td>16:00</td><td><span data-he>🏛️ <a href="https://www.google.com/maps/dir/?api=1&destination=Rynek+Glowny+Krakow" target="_blank" class="waze-link"><strong>Rynek Główny</strong></a> — כיכר השוק הראשית של קרקוב</span><span data-en>🏛️ <a href="https://www.google.com/maps/dir/?api=1&destination=Rynek+Glowny+Krakow" target="_blank" class="waze-link"><strong>Rynek Główny</strong></a> — Kraków's Main Market Square</span></td></tr>
         <tr><td>16:00–20:00</td><td><span data-he>🛍️ קניות + בתי קפה + אווירת רחוב + Obwarzanek (טבעת הלחם הפולנית)</span><span data-en>🛍️ Shopping + cafés + street atmosphere + Obwarzanek (Polish bread ring)</span></td></tr>
         <tr><td>20:00</td><td><span data-he>🍽️ ארוחת ערב בסביבות הכיכר</span><span data-en>🍽️ Dinner near the Main Square</span></td></tr>
       </table>
       <div class="tip">
-        <span data-he>🚗 <strong>Waze החזרת רכב:</strong> "Kraków Airport KRK" &nbsp;|&nbsp; 🏛️ <strong>Waze לכיכר:</strong> "Rynek Główny Kraków"</span>
-        <span data-en>🚗 <strong>Car return Waze:</strong> "Kraków Airport KRK" &nbsp;|&nbsp; 🏛️ <strong>Square Waze:</strong> "Rynek Główny Kraków"</span>
+        <span data-he>🚗 <strong>Google Maps החזרת רכב:</strong> "Kraków Airport KRK" &nbsp;|&nbsp; 🏛️ <strong>Google Maps לכיכר:</strong> "Rynek Główny Kraków"</span>
+        <span data-en>🚗 <strong>Car return Maps:</strong> "Kraków Airport KRK" &nbsp;|&nbsp; 🏛️ <strong>Square Maps:</strong> "Rynek Główny Kraków"</span>
       </div>
       <div class="tip">
         <span data-he>💡 <strong>Bolt או Uber?</strong> שניהם עובדים מצוין בקרקוב. Bolt פופולרי יותר בפולין ולרוב זול יותר.</span>
@@ -749,14 +933,14 @@ footer { background: var(--navy); color: #aaa; text-align: center; padding: 22px
       </div>
 
       <div class="waze-row">
-        <strong>📍 Waze:</strong> "Kopalnia Soli Wieliczka" / "Wieliczka Salt Mine"
+        <strong>📍</strong> <a href="https://www.google.com/maps/dir/?api=1&destination=Kopalnia+Soli+Wieliczka" target="_blank" class="btn btn-gmaps" style="font-size:0.8em;padding:4px 10px;">🚗 Kopalnia Soli Wieliczka</a>
       </div>
       <table class="schedule">
         <tr><td>09:00</td><td><span data-he>🚌/🚕 יציאה ל-Wieliczka</span><span data-en>🚌/🚕 Depart to Wieliczka</span></td></tr>
-        <tr><td>09:30</td><td><span data-he>⛏️ <a href="https://waze.com/ul?q=Kopalnia+Soli+Wieliczka&navigate=yes" target="_blank" class="waze-link"><strong>מכרות מלח ויליצ'קה</strong></a> — סיור ~2.5 שעות · כנסיית מלח · פסלים · 125 מ' מתחת לאדמה</span><span data-en>⛏️ <a href="https://waze.com/ul?q=Kopalnia+Soli+Wieliczka&navigate=yes" target="_blank" class="waze-link"><strong>Wieliczka Salt Mine</strong></a> — ~2.5h tour · salt church · sculptures · 125m underground</span></td></tr>
+        <tr><td>09:30</td><td><span data-he>⛏️ <a href="https://www.google.com/maps/dir/?api=1&destination=Kopalnia+Soli+Wieliczka" target="_blank" class="waze-link"><strong>מכרות מלח ויליצ'קה</strong></a> — סיור ~2.5 שעות · כנסיית מלח · פסלים · 125 מ' מתחת לאדמה</span><span data-en>⛏️ <a href="https://www.google.com/maps/dir/?api=1&destination=Kopalnia+Soli+Wieliczka" target="_blank" class="waze-link"><strong>Wieliczka Salt Mine</strong></a> — ~2.5h tour · salt church · sculptures · 125m underground</span></td></tr>
         <tr><td>12:00</td><td><span data-he>🍽️ ארוחה במסעדה <strong>תת-קרקעית</strong> (125 מ' עומק!)</span><span data-en>🍽️ Lunch in the <strong>underground restaurant</strong> (125m deep!)</span></td></tr>
         <tr><td>14:00</td><td><span data-he>🚌/🚕 חזרה ל-Novotel · מנוחה</span><span data-en>🚌/🚕 Return to Novotel · rest</span></td></tr>
-        <tr><td>16:30</td><td><span data-he>🏰 <a href="https://waze.com/ul?q=Zamek+Krolewski+na+Wawelu+Krakow&navigate=yes" target="_blank" class="waze-link"><strong>גבעת וואוול מבחוץ</strong></a> — כניסה חינם · תצפית נהדרת</span><span data-en>🏰 <a href="https://waze.com/ul?q=Zamek+Krolewski+na+Wawelu+Krakow&navigate=yes" target="_blank" class="waze-link"><strong>Wawel Hill exterior</strong></a> — free entry · great viewpoint</span></td></tr>
+        <tr><td>16:30</td><td><span data-he>🏰 <a href="https://www.google.com/maps/dir/?api=1&destination=Zamek+Krolewski+na+Wawelu+Krakow" target="_blank" class="waze-link"><strong>גבעת וואוול מבחוץ</strong></a> — כניסה חינם · תצפית נהדרת</span><span data-en>🏰 <a href="https://www.google.com/maps/dir/?api=1&destination=Zamek+Krolewski+na+Wawelu+Krakow" target="_blank" class="waze-link"><strong>Wawel Hill exterior</strong></a> — free entry · great viewpoint</span></td></tr>
       </table>
 
       <div class="tip">
@@ -785,21 +969,20 @@ footer { background: var(--navy); color: #aaa; text-align: center; padding: 22px
       <div class="weather-badge">☀️ <span data-he>מקסימום 24°C · לילה 14°C · עננות ~35%</span><span data-en>High 24°C · Night 14°C · Cloud cover ~35%</span></div>
       <div class="clothing-tip">👟 <span data-he>בגדים קלים לקיץ · נעליים נוחות — הרבה הליכה בעיר העתיקה!</span><span data-en>Light summer clothes · comfortable shoes — lots of walking in the Old Town!</span></div>
       <div class="waze-row">
-        <strong>📍 Waze מוזיאון:</strong> "Muzeum Lotnictwa Polskiego Kraków" &nbsp;|&nbsp;
-        <strong>Waze עיר עתיקה:</strong> "Rynek Główny Kraków"
+        <strong>📍</strong> <a href="https://www.google.com/maps/dir/?api=1&destination=Muzeum+Lotnictwa+Polskiego+Krakow" target="_blank" class="btn btn-gmaps" style="font-size:0.8em;padding:4px 10px;">🚗 מוזיאון התעופה</a> &nbsp;<a href="https://www.google.com/maps/dir/?api=1&destination=Rynek+Glowny+Krakow" target="_blank" class="btn btn-gmaps" style="font-size:0.8em;padding:4px 10px;">🚗 Rynek Główny</a>
       </div>
       <div class="route-info">
         <span data-he>Novotel → מוזיאון תעופה · ~5 ק"מ · ~10 דקות · חניה חינם · גם חשמלית 5, 9, 52</span>
         <span data-en>Novotel → Aviation Museum · ~5 km · ~10 min · free parking · also trams 5, 9, 52</span>
       </div>
       <table class="schedule">
-        <tr><td>09:00</td><td><span data-he>✈️ <a href="https://waze.com/ul?q=Muzeum+Lotnictwa+Polskiego+Krakow&navigate=yes" target="_blank" class="waze-link"><strong>מוזיאון התעופה הפולני</strong></a> — אחד הגדולים בעולם · 200+ מטוסים, מסוקים ודאונים · מטוסי מלחמת העולם I ו-II · ילדים נכנסים לקוקפיטים!</span><span data-en>✈️ <a href="https://waze.com/ul?q=Muzeum+Lotnictwa+Polskiego+Krakow&navigate=yes" target="_blank" class="waze-link"><strong>Polish Aviation Museum</strong></a> — one of the world's largest · 200+ aircraft, helicopters and gliders · WWI &amp; WWII planes · kids can enter cockpits!</span></td></tr>
+        <tr><td>09:00</td><td><span data-he>✈️ <a href="https://www.google.com/maps/dir/?api=1&destination=Muzeum+Lotnictwa+Polskiego+Krakow" target="_blank" class="waze-link"><strong>מוזיאון התעופה הפולני</strong></a> — אחד הגדולים בעולם · 200+ מטוסים, מסוקים ודאונים · מטוסי מלחמת העולם I ו-II · ילדים נכנסים לקוקפיטים!</span><span data-en>✈️ <a href="https://www.google.com/maps/dir/?api=1&destination=Muzeum+Lotnictwa+Polskiego+Krakow" target="_blank" class="waze-link"><strong>Polish Aviation Museum</strong></a> — one of the world's largest · 200+ aircraft, helicopters and gliders · WWI &amp; WWII planes · kids can enter cockpits!</span></td></tr>
         <tr><td>11:30</td><td><span data-he>🚕 Bolt/Uber חזרה ל-Novotel · הפסקה קצרה</span><span data-en>🚕 Bolt/Uber back to Novotel · short break</span></td></tr>
-        <tr><td>13:00</td><td><span data-he>🏛️ יציאה לעיר העתיקה — <a href="https://waze.com/ul?q=Stare+Miasto+Krakow&navigate=yes" target="_blank" class="waze-link"><strong>Stare Miasto</strong></a></span><span data-en>🏛️ Head to the Old Town — <a href="https://waze.com/ul?q=Stare+Miasto+Krakow&navigate=yes" target="_blank" class="waze-link"><strong>Stare Miasto</strong></a></span></td></tr>
+        <tr><td>13:00</td><td><span data-he>🏛️ יציאה לעיר העתיקה — <a href="https://www.google.com/maps/dir/?api=1&destination=Stare+Miasto+Krakow" target="_blank" class="waze-link"><strong>Stare Miasto</strong></a></span><span data-en>🏛️ Head to the Old Town — <a href="https://www.google.com/maps/dir/?api=1&destination=Stare+Miasto+Krakow" target="_blank" class="waze-link"><strong>Stare Miasto</strong></a></span></td></tr>
         <tr><td>13:00</td><td><span data-he>🍽️ ארוחת צהריים בעיר העתיקה (Bar Mleczny / Grodzka Street)</span><span data-en>🍽️ Lunch in the Old Town (Bar Mleczny / Grodzka Street)</span></td></tr>
-        <tr><td>14:00</td><td><span data-he>🛍️ <a href="https://waze.com/ul?q=Rynek+Glowny+Krakow&navigate=yes" target="_blank" class="waze-link"><strong>Rynek Główny</strong></a> — קניות ב-<a href="https://waze.com/ul?q=Sukiennice+Krakow&navigate=yes" target="_blank" class="waze-link">Sukiennice</a> (ענבר, מלאכת יד, מזכרות)</span><span data-en>🛍️ <a href="https://waze.com/ul?q=Rynek+Glowny+Krakow&navigate=yes" target="_blank" class="waze-link"><strong>Rynek Główny</strong></a> — shopping at <a href="https://waze.com/ul?q=Sukiennice+Krakow&navigate=yes" target="_blank" class="waze-link">Sukiennice</a> (amber, crafts, souvenirs)</span></td></tr>
+        <tr><td>14:00</td><td><span data-he>🛍️ <a href="https://www.google.com/maps/dir/?api=1&destination=Rynek+Glowny+Krakow" target="_blank" class="waze-link"><strong>Rynek Główny</strong></a> — קניות ב-<a href="https://www.google.com/maps/dir/?api=1&destination=Sukiennice+Krakow" target="_blank" class="waze-link">Sukiennice</a> (ענבר, מלאכת יד, מזכרות)</span><span data-en>🛍️ <a href="https://www.google.com/maps/dir/?api=1&destination=Rynek+Glowny+Krakow" target="_blank" class="waze-link"><strong>Rynek Główny</strong></a> — shopping at <a href="https://www.google.com/maps/dir/?api=1&destination=Sukiennice+Krakow" target="_blank" class="waze-link">Sukiennice</a> (amber, crafts, souvenirs)</span></td></tr>
         <tr><td>15:30</td><td><span data-he>☕ בתי קפה בסמטאות — רחוב Floriańska / Grodzka</span><span data-en>☕ Cafés in the alleys — Floriańska St / Grodzka St</span></td></tr>
-        <tr><td>17:00</td><td><span data-he>🌳 <a href="https://waze.com/ul?q=Planty+Krakow&navigate=yes" target="_blank" class="waze-link"><strong>Planty</strong></a> — גן הטיילת המקיף את העיר העתיקה</span><span data-en>🌳 <a href="https://waze.com/ul?q=Planty+Krakow&navigate=yes" target="_blank" class="waze-link"><strong>Planty</strong></a> — green park ring surrounding the Old Town</span></td></tr>
+        <tr><td>17:00</td><td><span data-he>🌳 <a href="https://www.google.com/maps/dir/?api=1&destination=Planty+Krakow" target="_blank" class="waze-link"><strong>Planty</strong></a> — גן הטיילת המקיף את העיר העתיקה</span><span data-en>🌳 <a href="https://www.google.com/maps/dir/?api=1&destination=Planty+Krakow" target="_blank" class="waze-link"><strong>Planty</strong></a> — green park ring surrounding the Old Town</span></td></tr>
         <tr><td>19:30</td><td><span data-he>🍽️ ארוחת ערב בעיר העתיקה</span><span data-en>🍽️ Dinner in the Old Town</span></td></tr>
       </table>
       <div class="tip">
@@ -828,19 +1011,18 @@ footer { background: var(--navy); color: #aaa; text-align: center; padding: 22px
       <div class="weather-badge">🌤️ <span data-he>מקסימום 23°C · לילה 13°C · עננות ~37%</span><span data-en>High 23°C · Night 13°C · Cloud cover ~37%</span></div>
       <div class="clothing-tip">🌙 <span data-he>בגדים קלים + ז'קט לנסיעת הלילה לשדה (03:00!) · נעליים נוחות לוואוול + קזימז'</span><span data-en>Light clothes + jacket for the late-night airport run (03:00!) · comfy shoes for Wawel + Kazimierz</span></div>
       <div class="waze-row">
-        <strong>📍 Waze וואוול:</strong> "Zamek Królewski na Wawelu" &nbsp;|&nbsp;
-        <strong>Waze שדה:</strong> "Kraków Airport KRK"
+        <strong>📍</strong> <a href="https://www.google.com/maps/dir/?api=1&destination=Zamek+Krolewski+na+Wawelu+Krakow" target="_blank" class="btn btn-gmaps" style="font-size:0.8em;padding:4px 10px;">🚗 טירת וואוול</a> &nbsp;<a href="https://www.google.com/maps/dir/?api=1&destination=Krakow+Airport+KRK" target="_blank" class="btn btn-gmaps" style="font-size:0.8em;padding:4px 10px;">🚗 שדה תעופה KRK</a>
       </div>
       <div class="route-info">
         <span data-he>Novotel → וואוול · ~1.3 ק"מ · 15 דק' הליכה לאורך הויסלה · Novotel → שדה תעופה · ~16 ק"מ · ~22 דקות (DK79 מערבה)</span>
         <span data-en>Novotel → Wawel · ~1.3 km · 15 min walk along Vistula · Novotel → Airport · ~16 km · ~22 min (DK79 west)</span>
       </div>
       <table class="schedule">
-        <tr><td>09:00</td><td><span data-he>🏰 <a href="https://waze.com/ul?q=Zamek+Krolewski+na+Wawelu+Krakow&navigate=yes" target="_blank" class="waze-link"><strong>טירת וואוול</strong></a> + <a href="https://waze.com/ul?q=Smocza+Jama+Krakow&navigate=yes" target="_blank" class="waze-link"><strong>מערת הדרקון Smocza Jama</strong></a> — דרקון פולף אש! ילדים מתלהבים</span><span data-en>🏰 <a href="https://waze.com/ul?q=Zamek+Krolewski+na+Wawelu+Krakow&navigate=yes" target="_blank" class="waze-link"><strong>Wawel Castle</strong></a> + <a href="https://waze.com/ul?q=Smocza+Jama+Krakow&navigate=yes" target="_blank" class="waze-link"><strong>Smocza Jama Dragon's Cave</strong></a> — fire-breathing dragon! kids love it</span></td></tr>
-        <tr><td>11:30</td><td><span data-he>🚶 <a href="https://waze.com/ul?q=Ulica+Kanonicza+Krakow&navigate=yes" target="_blank" class="waze-link">רחוב <strong>Kanonicza</strong></a> → <a href="https://waze.com/ul?q=Kazimierz+Krakow&navigate=yes" target="_blank" class="waze-link">קזימז'</a> — גלריות, בתי קפה, חצרות</span><span data-en>🚶 <a href="https://waze.com/ul?q=Ulica+Kanonicza+Krakow&navigate=yes" target="_blank" class="waze-link"><strong>Kanonicza Street</strong></a> → <a href="https://waze.com/ul?q=Kazimierz+Krakow&navigate=yes" target="_blank" class="waze-link">Kazimierz district</a> — galleries, cafés, courtyards</span></td></tr>
-        <tr><td>13:30</td><td><span data-he>🍽️ ארוחת צהריים ב-<a href="https://waze.com/ul?q=Kazimierz+Krakow&navigate=yes" target="_blank" class="waze-link">קזימז'</a></span><span data-en>🍽️ Lunch in <a href="https://waze.com/ul?q=Kazimierz+Krakow&navigate=yes" target="_blank" class="waze-link">Kazimierz</a></span></td></tr>
+        <tr><td>09:00</td><td><span data-he>🏰 <a href="https://www.google.com/maps/dir/?api=1&destination=Zamek+Krolewski+na+Wawelu+Krakow" target="_blank" class="waze-link"><strong>טירת וואוול</strong></a> + <a href="https://www.google.com/maps/dir/?api=1&destination=Smocza+Jama+Krakow" target="_blank" class="waze-link"><strong>מערת הדרקון Smocza Jama</strong></a> — דרקון פולף אש! ילדים מתלהבים</span><span data-en>🏰 <a href="https://www.google.com/maps/dir/?api=1&destination=Zamek+Krolewski+na+Wawelu+Krakow" target="_blank" class="waze-link"><strong>Wawel Castle</strong></a> + <a href="https://www.google.com/maps/dir/?api=1&destination=Smocza+Jama+Krakow" target="_blank" class="waze-link"><strong>Smocza Jama Dragon's Cave</strong></a> — fire-breathing dragon! kids love it</span></td></tr>
+        <tr><td>11:30</td><td><span data-he>🚶 <a href="https://www.google.com/maps/dir/?api=1&destination=Ulica+Kanonicza+Krakow" target="_blank" class="waze-link">רחוב <strong>Kanonicza</strong></a> → <a href="https://www.google.com/maps/dir/?api=1&destination=Kazimierz+Krakow" target="_blank" class="waze-link">קזימז'</a> — גלריות, בתי קפה, חצרות</span><span data-en>🚶 <a href="https://www.google.com/maps/dir/?api=1&destination=Ulica+Kanonicza+Krakow" target="_blank" class="waze-link"><strong>Kanonicza Street</strong></a> → <a href="https://www.google.com/maps/dir/?api=1&destination=Kazimierz+Krakow" target="_blank" class="waze-link">Kazimierz district</a> — galleries, cafés, courtyards</span></td></tr>
+        <tr><td>13:30</td><td><span data-he>🍽️ ארוחת צהריים ב-<a href="https://www.google.com/maps/dir/?api=1&destination=Kazimierz+Krakow" target="_blank" class="waze-link">קזימז'</a></span><span data-en>🍽️ Lunch in <a href="https://www.google.com/maps/dir/?api=1&destination=Kazimierz+Krakow" target="_blank" class="waze-link">Kazimierz</a></span></td></tr>
         <tr><td>15:00</td><td><span data-he>🧳 צ'ק-אאוט + מזוודות לאחסון במלון · טיול פרידה</span><span data-en>🧳 Check out + store bags at hotel · farewell stroll</span></td></tr>
-        <tr><td>19:00</td><td><span data-he>🍽️ <strong>ארוחת פרידה</strong> — <a href="https://waze.com/ul?q=Miod+Malina+ul+Grodzka+40+Krakow&navigate=yes" target="_blank" class="waze-link">Miód Malina</a>, ul. Grodzka 40 — הזמינו מראש!</span><span data-en>🍽️ <strong>Farewell dinner</strong> — <a href="https://waze.com/ul?q=Miod+Malina+ul+Grodzka+40+Krakow&navigate=yes" target="_blank" class="waze-link">Miód Malina</a>, ul. Grodzka 40 — book ahead!</span></td></tr>
+        <tr><td>19:00</td><td><span data-he>🍽️ <strong>ארוחת פרידה</strong> — <a href="https://www.google.com/maps/dir/?api=1&destination=Miod+Malina+ul+Grodzka+40+Krakow" target="_blank" class="waze-link">Miód Malina</a>, ul. Grodzka 40 — הזמינו מראש!</span><span data-en>🍽️ <strong>Farewell dinner</strong> — <a href="https://www.google.com/maps/dir/?api=1&destination=Miod+Malina+ul+Grodzka+40+Krakow" target="_blank" class="waze-link">Miód Malina</a>, ul. Grodzka 40 — book ahead!</span></td></tr>
         <tr><td>21:30</td><td><span data-he>🚕 Bolt/Uber לשדה התעופה (~22 דקות · ~55–75 PLN לרכב)</span><span data-en>🚕 Bolt/Uber to airport (~22 min · ~55–75 PLN per ride)</span></td></tr>
         <tr><td>03:00</td><td><span data-he>✅ הגעה לשדה התעופה KRK</span><span data-en>✅ Arrive at KRK airport</span></td></tr>
         <tr><td>05:40</td><td><span data-he>✈️ <strong>המראה קרקוב → תל אביב</strong> · נחיתה 10:10</span><span data-en>✈️ <strong>Depart Kraków → Tel Aviv</strong> · arrive 10:10</span></td></tr>
@@ -882,11 +1064,11 @@ footer { background: var(--navy); color: #aaa; text-align: center; padding: 22px
       <p>💰 ~18–28 PLN</p>
     </div>
     <div class="food-card">
-      <h4>🍴 <a href="https://waze.com/ul?q=Stara+Karczma+Wisla&navigate=yes" target="_blank" class="waze-link">Stara Karczma Wisła</a></h4>
+      <h4>🍴 <a href="https://www.google.com/maps/dir/?api=1&destination=Stara+Karczma+Wisla" target="_blank" class="waze-link">Stara Karczma Wisła</a></h4>
       <p><span data-he>קארצ'מה אותנטית ליד גבול צ'כיה. אווירה עץ מקורית, תפריט מסורתי עשיר, שירות מצוין לקבוצות גדולות עם ילדים.</span><span data-en>Authentic inn near Czech border. Original wood interior, rich traditional menu, excellent for large groups with kids.</span></p>
     </div>
     <div class="food-card">
-      <h4>🍴 <a href="https://waze.com/ul?q=Restauracja+Aries+Hotel+Wisla&navigate=yes" target="_blank" class="waze-link">Restauracja Aries</a></h4>
+      <h4>🍴 <a href="https://www.google.com/maps/dir/?api=1&destination=Restauracja+Aries+Hotel+Wisla" target="_blank" class="waze-link">Restauracja Aries</a></h4>
       <p><span data-he>המסעדה של המלון — מצוינת לפי חוות דעת, מחירים הוגנים, תפריט פולני-הררי. נוח במיוחד בערבים.</span><span data-en>The hotel's own restaurant — excellent reviews, fair prices, Polish-mountain menu. Very convenient for evenings.</span></p>
       <p>📍 Aries Hotel, ul. Czarne 3</p>
     </div>
@@ -910,12 +1092,12 @@ footer { background: var(--navy); color: #aaa; text-align: center; padding: 22px
       <p>💰 ~2–4 PLN</p>
     </div>
     <div class="food-card">
-      <h4>🍴 <a href="https://waze.com/ul?q=Miod+Malina+ul+Grodzka+40+Krakow&navigate=yes" target="_blank" class="waze-link">Miód Malina</a></h4>
+      <h4>🍴 <a href="https://www.google.com/maps/dir/?api=1&destination=Miod+Malina+ul+Grodzka+40+Krakow" target="_blank" class="waze-link">Miód Malina</a></h4>
       <p><span data-he>מסעדה פולנית קלאסית ליד כיכר השוק — אווירה מצוינת, מומלצת לארוחת פרידה. <strong>הזמינו מקום מראש!</strong></span><span data-en>Classic Polish restaurant near Main Square — great atmosphere, ideal for farewell dinner. <strong>Book ahead!</strong></span></p>
       <p>📍 ul. Grodzka 40 · 💰 ~40–70 PLN</p>
     </div>
     <div class="food-card">
-      <h4>🥪 <a href="https://waze.com/ul?q=Bar+Mleczny+Pod+Temida+ul+Grodzka+43+Krakow&navigate=yes" target="_blank" class="waze-link">Bar Mleczny "Pod Temidą"</a></h4>
+      <h4>🥪 <a href="https://www.google.com/maps/dir/?api=1&destination=Bar+Mleczny+Pod+Temida+ul+Grodzka+43+Krakow" target="_blank" class="waze-link">Bar Mleczny "Pod Temidą"</a></h4>
       <p><span data-he>הבר החלבי האיקוני של קרקוב — פיירוגי, ביגוס, שניצל, מרקים. הכול במחירי שנות ה-80. אידיאלי לצהריים זול!</span><span data-en>Kraków's iconic milk bar — pierogi, bigos, schnitzel, soups. Everything at 1980s prices. Ideal for cheap lunch!</span></p>
       <p>📍 ul. Grodzka 43 · 💰 ~8–20 PLN</p>
     </div>
